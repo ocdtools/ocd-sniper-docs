@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>SunPumpABI - On-Chain Dynamics</title>
+    
+    <meta name="description" content="On-Chain Dynamics Sniper Server Documentation" />
+    
+    
+    
+    <meta property="og:title" content="On-Chain Dynamics"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="tabicon.png"/>
+    <meta property="og:site_name" content="On-Chain Dynamics Sniper Server"/>
+    <meta property="og:url" content=""/>
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav class="wrap">
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    
+    <h2><a href="index.html">Home</a></h2><h2><a href="https://www.onchaindynamics.io" target="_blank" class="menu-item" id="website_link" >Website</a></h2><h2><a href="https://forum.onchaindynamics.io" target="_blank" class="menu-item" id="forum_link" >Forum</a></h2><h3>Ethereum</h3><ul><li><a href="module-EthereumFlashbotUtils.html">EthereumFlashbotUtils</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-EthereumFlashbotUtils.html#.FLASHBOTS_AUTH_KEY">FLASHBOTS_AUTH_KEY</a></li><li data-type='member' style='display: none;'><a href="module-EthereumFlashbotUtils.html#.FLASHBOTS_RPC_URL">FLASHBOTS_RPC_URL</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="module-EthereumFlashbotUtils.html#.getNextFlashbotRequestId">getNextFlashbotRequestId</a></li><li data-type='method' style='display: none;'><a href="module-EthereumFlashbotUtils.html#.toRpcHexString">toRpcHexString</a></li></ul></li><li><a href="module-EthereumFlashbots.html">EthereumFlashbots</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-EthereumFlashbots.html#.flashbotBundleTxn">flashbotBundleTxn</a></li><li data-type='method' style='display: none;'><a href="module-EthereumFlashbots.html#.flashbotPrivateTxn">flashbotPrivateTxn</a></li><li data-type='method' style='display: none;'><a href="module-EthereumFlashbots.html#.flashbotRequest">flashbotRequest</a></li></ul></li><li><a href="module-EthereumGas.html">EthereumGas</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-EthereumGas.html#.gasConfigBuy">gasConfigBuy</a></li><li data-type='method' style='display: none;'><a href="module-EthereumGas.html#.getBlockAndFeeData">getBlockAndFeeData</a></li></ul></li><li><a href="module-EthereumTokenPairInfo.html">EthereumTokenPairInfo</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-EthereumTokenPairInfo.html#.fetchTokenAndPairInfo">fetchTokenAndPairInfo</a></li><li data-type='method' style='display: none;'><a href="module-EthereumTokenPairInfo.html#.generateFallbackData">generateFallbackData</a></li><li data-type='method' style='display: none;'><a href="module-EthereumTokenPairInfo.html#.getLiquidityAndPriceInfo">getLiquidityAndPriceInfo</a></li><li data-type='method' style='display: none;'><a href="module-EthereumTokenPairInfo.html#.getPairAndTokenInfo">getPairAndTokenInfo</a></li></ul></li><li><a href="module-EthereumTradeExecution.html">EthereumTradeExecution</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-EthereumTradeExecution.html#.executeFlashbotBundleBuy">executeFlashbotBundleBuy</a></li><li data-type='method' style='display: none;'><a href="module-EthereumTradeExecution.html#.executeUniswapV2Buy">executeUniswapV2Buy</a></li></ul></li><li><a href="module-EthereumTradeUtils.html">EthereumTradeUtils</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-EthereumTradeUtils.html#.TRANSFER_TOPIC">TRANSFER_TOPIC</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="module-EthereumTradeUtils.html#.findKeyByAddress">findKeyByAddress</a></li><li data-type='method' style='display: none;'><a href="module-EthereumTradeUtils.html#.getErrorMessage">getErrorMessage</a></li></ul></li><li><a href="module-EthereumTransactions.html">EthereumTransactions</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-EthereumTransactions.html#.constructTxDetails">constructTxDetails</a></li><li data-type='method' style='display: none;'><a href="module-EthereumTransactions.html#.decodeTransaction">decodeTransaction</a></li><li data-type='method' style='display: none;'><a href="module-EthereumTransactions.html#.determineTokenAddress">determineTokenAddress</a></li><li data-type='method' style='display: none;'><a href="module-EthereumTransactions.html#.extractTransactionData">extractTransactionData</a></li><li data-type='method' style='display: none;'><a href="module-EthereumTransactions.html#.getBuyReceipts">getBuyReceipts</a></li><li data-type='method' style='display: none;'><a href="module-EthereumTransactions.html#.waitForTargetBlock">waitForTargetBlock</a></li><li data-type='method' style='display: none;'><a href="module-EthereumTransactions.html#.waitForTransactionReceipt">waitForTransactionReceipt</a></li></ul></li><li><a href="module-EthereumUtils.html">EthereumUtils</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-EthereumUtils.html#.ethPriceInUSD">ethPriceInUSD</a></li><li data-type='member' style='display: none;'><a href="module-EthereumUtils.html#.ethereumTransactionQueue">ethereumTransactionQueue</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="module-EthereumUtils.html#.checkFunction">checkFunction</a></li><li data-type='method' style='display: none;'><a href="module-EthereumUtils.html#.isValidEthereumAddress">isValidEthereumAddress</a></li><li data-type='method' style='display: none;'><a href="module-EthereumUtils.html#.normalizeEthereumAddress">normalizeEthereumAddress</a></li></ul></li><li><a href="module-UniswapV2Constants.html">UniswapV2Constants</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-UniswapV2Constants.html#.WETH">WETH</a></li><li data-type='member' style='display: none;'><a href="module-UniswapV2Constants.html#.addresses">addresses</a></li><li data-type='member' style='display: none;'><a href="module-UniswapV2Constants.html#.ocdRouterAddress">ocdRouterAddress</a></li><li data-type='member' style='display: none;'><a href="module-UniswapV2Constants.html#.uniswapV2FactoryAddress">uniswapV2FactoryAddress</a></li><li data-type='member' style='display: none;'><a href="module-UniswapV2Constants.html#.uniswapV2Functions">uniswapV2Functions</a></li><li data-type='member' style='display: none;'><a href="module-UniswapV2Constants.html#.uniswapV2InputParams">uniswapV2InputParams</a></li><li data-type='member' style='display: none;'><a href="module-UniswapV2Constants.html#.uniswapV2RouterAddress">uniswapV2RouterAddress</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="module-UniswapV2Constants.html#.getUniswapV2Factory">getUniswapV2Factory</a></li><li data-type='method' style='display: none;'><a href="module-UniswapV2Constants.html#.getUniswapV2Router">getUniswapV2Router</a></li><li data-type='method' style='display: none;'><a href="module-UniswapV2Constants.html#~initializeFactory">initializeFactory</a></li><li data-type='method' style='display: none;'><a href="module-UniswapV2Constants.html#~initializeRouter">initializeRouter</a></li><li data-type='method' style='display: none;'><a href="module-UniswapV2Constants.html#~lazyInitialize">lazyInitialize</a></li></ul></li><li><a href="module-UniswapV2Utilities.html">UniswapV2Utilities</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-UniswapV2Utilities.html#.filterPendingConfigs">filterPendingConfigs</a></li><li data-type='method' style='display: none;'><a href="module-UniswapV2Utilities.html#.handleUniswapV2Config">handleUniswapV2Config</a></li><li data-type='method' style='display: none;'><a href="module-UniswapV2Utilities.html#.handleUniswapV2Transaction">handleUniswapV2Transaction</a></li><li data-type='method' style='display: none;'><a href="module-UniswapV2Utilities.html#.processUniswapV2Buy">processUniswapV2Buy</a></li><li data-type='method' style='display: none;'><a href="module-UniswapV2Utilities.html#.processUniswapV2Configs">processUniswapV2Configs</a></li></ul></li></ul><h3>Solana</h3><ul><li><a href="module-RaydiumUtilities.html">RaydiumUtilities</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-RaydiumUtilities.html#.filterPendingConfigs">filterPendingConfigs</a></li><li data-type='method' style='display: none;'><a href="module-RaydiumUtilities.html#.handleRaydiumConfig">handleRaydiumConfig</a></li><li data-type='method' style='display: none;'><a href="module-RaydiumUtilities.html#.handleRaydiumLogEvent">handleRaydiumLogEvent</a></li><li data-type='method' style='display: none;'><a href="module-RaydiumUtilities.html#.processRaydiumConfigs">processRaydiumConfigs</a></li></ul></li><li><a href="module-SolanaConstants.html">SolanaConstants</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-SolanaConstants.html#.PUMP_FUN_SIGNER">PUMP_FUN_SIGNER</a></li><li data-type='member' style='display: none;'><a href="module-SolanaConstants.html#.RAYDIUM_INSTRUCTIONS">RAYDIUM_INSTRUCTIONS</a></li><li data-type='member' style='display: none;'><a href="module-SolanaConstants.html#.RAYDIUM_LP_V4_ID">RAYDIUM_LP_V4_ID</a></li><li data-type='member' style='display: none;'><a href="module-SolanaConstants.html#.SOL_ADDRESS">SOL_ADDRESS</a></li><li data-type='member' style='display: none;'><a href="module-SolanaConstants.html#.STANDARD_AMM_ID">STANDARD_AMM_ID</a></li></ul></li><li><a href="module-SolanaTokenLiquidity.html">SolanaTokenLiquidity</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-SolanaTokenLiquidity.html#.getLiquidityAndTokenInfo">getLiquidityAndTokenInfo</a></li><li data-type='method' style='display: none;'><a href="module-SolanaTokenLiquidity.html#.getTokenDetailsSolana">getTokenDetailsSolana</a></li><li data-type='method' style='display: none;'><a href="module-SolanaTokenLiquidity.html#.getTokenMetaData">getTokenMetaData</a></li></ul></li><li><a href="module-SolanaTransactions.html">SolanaTransactions</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-SolanaTransactions.html#.checkPumpFunMigration">checkPumpFunMigration</a></li><li data-type='method' style='display: none;'><a href="module-SolanaTransactions.html#.decodeLegacyTransaction">decodeLegacyTransaction</a></li><li data-type='method' style='display: none;'><a href="module-SolanaTransactions.html#.decodeVersionedTransaction">decodeVersionedTransaction</a></li><li data-type='method' style='display: none;'><a href="module-SolanaTransactions.html#.extractRaydiumPoolDetails">extractRaydiumPoolDetails</a></li><li data-type='method' style='display: none;'><a href="module-SolanaTransactions.html#.extractTokenCreator">extractTokenCreator</a></li><li data-type='method' style='display: none;'><a href="module-SolanaTransactions.html#.extractTransactionData">extractTransactionData</a></li><li data-type='method' style='display: none;'><a href="module-SolanaTransactions.html#.fetchTransactionDetails">fetchTransactionDetails</a></li><li data-type='method' style='display: none;'><a href="module-SolanaTransactions.html#.parseReservesFromLogs">parseReservesFromLogs</a></li></ul></li><li><a href="module-SolanaUtils.html">SolanaUtils</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-SolanaUtils.html#.solPriceInUSD">solPriceInUSD</a></li><li data-type='member' style='display: none;'><a href="module-SolanaUtils.html#.solanaTransactionQueue">solanaTransactionQueue</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="module-SolanaUtils.html#.getDefaultSolanaWallet">getDefaultSolanaWallet</a></li><li data-type='method' style='display: none;'><a href="module-SolanaUtils.html#.isValidSolanaAddress">isValidSolanaAddress</a></li></ul></li></ul><h3>Tron</h3><ul><li><a href="module-SunPumpConstants.html">SunPumpConstants</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-SunPumpConstants.html#.addresses">addresses</a></li><li data-type='member' style='display: none;'><a href="module-SunPumpConstants.html#.sunPumpContractEvents">sunPumpContractEvents</a></li><li data-type='member' style='display: none;'><a href="module-SunPumpConstants.html#.sunPumpEventMethodIds">sunPumpEventMethodIds</a></li><li data-type='member' style='display: none;'><a href="module-SunPumpConstants.html#.sunPumpEventParams">sunPumpEventParams</a></li><li data-type='member' style='display: none;'><a href="module-SunPumpConstants.html#.sunPumpInputParams">sunPumpInputParams</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="module-SunPumpConstants.html#.getSunPumpContract">getSunPumpContract</a></li><li data-type='method' style='display: none;'><a href="module-SunPumpConstants.html#~initializeContract">initializeContract</a></li><li data-type='method' style='display: none;'><a href="module-SunPumpConstants.html#~lazyInitialize">lazyInitialize</a></li></ul></li><li><a href="module-SunPumpUtilities.html">SunPumpUtilities</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-SunPumpUtilities.html#.exports.processTronEvents">exports.processTronEvents</a></li><li data-type='method' style='display: none;'><a href="module-SunPumpUtilities.html#.filterPendingConfigs">filterPendingConfigs</a></li><li data-type='method' style='display: none;'><a href="module-SunPumpUtilities.html#.handleSunPumpConfig">handleSunPumpConfig</a></li><li data-type='method' style='display: none;'><a href="module-SunPumpUtilities.html#.handleTokenCreateEvent">handleTokenCreateEvent</a></li><li data-type='method' style='display: none;'><a href="module-SunPumpUtilities.html#.processSunPumpConfigs">processSunPumpConfigs</a></li></ul></li><li><a href="module-TronTokenLiquidity.html">TronTokenLiquidity</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-TronTokenLiquidity.html#.generateFallbackData">generateFallbackData</a></li><li data-type='method' style='display: none;'><a href="module-TronTokenLiquidity.html#.getLiquidityAndTokenInfo">getLiquidityAndTokenInfo</a></li><li data-type='method' style='display: none;'><a href="module-TronTokenLiquidity.html#.getPoolDetailsSunPump">getPoolDetailsSunPump</a></li><li data-type='method' style='display: none;'><a href="module-TronTokenLiquidity.html#.getTokenDetailsTron">getTokenDetailsTron</a></li></ul></li><li><a href="module-TronTransactionUtils.html">TronTransactionUtils</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-TronTransactionUtils.html#.tronTransactionQueue">tronTransactionQueue</a></li><li data-type='member' style='display: none;'><a href="module-TronTransactionUtils.html#.trxPriceInUSD">trxPriceInUSD</a></li><li data-type='member' style='display: none;'><a href="module-TronTransactionUtils.html#.waitForNextBlock">waitForNextBlock</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="module-TronTransactionUtils.html#.fetchCurrentBlockNumber">fetchCurrentBlockNumber</a></li><li data-type='method' style='display: none;'><a href="module-TronTransactionUtils.html#.isValidTronAddress">isValidTronAddress</a></li></ul></li><li><a href="module-TronTransactions.html">TronTransactions</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-TronTransactions.html#.checkTronTransaction">checkTronTransaction</a></li><li data-type='method' style='display: none;'><a href="module-TronTransactions.html#.extractTronAddresses">extractTronAddresses</a></li></ul></li></ul><h3>Sniper</h3><ul><li><a href="module-SniperFunctions.html">SniperFunctions</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-SniperFunctions.html#.addOrUpdateConfig">addOrUpdateConfig</a></li><li data-type='method' style='display: none;'><a href="module-SniperFunctions.html#.deleteConfig">deleteConfig</a></li><li data-type='method' style='display: none;'><a href="module-SniperFunctions.html#.getPendingConfigs">getPendingConfigs</a></li><li data-type='method' style='display: none;'><a href="module-SniperFunctions.html#.getSniperList">getSniperList</a></li><li data-type='method' style='display: none;'><a href="module-SniperFunctions.html#.initializePendingConfigs">initializePendingConfigs</a></li><li data-type='method' style='display: none;'><a href="module-SniperFunctions.html#.retrieveConfigsByUserId">retrieveConfigsByUserId</a></li><li data-type='method' style='display: none;'><a href="module-SniperFunctions.html#.setConfigInactive">setConfigInactive</a></li><li data-type='method' style='display: none;'><a href="module-SniperFunctions.html#.updateAggregates">updateAggregates</a></li><li data-type='method' style='display: none;'><a href="module-SniperFunctions.html#.updateGlobalFlag">updateGlobalFlag</a></li></ul></li><li><a href="module-SniperHandlers.html">SniperHandlers</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-SniperHandlers.html#.handleSniperUpdates">handleSniperUpdates</a></li><li data-type='method' style='display: none;'><a href="module-SniperHandlers.html#~activityUpdate">activityUpdate</a></li><li data-type='method' style='display: none;'><a href="module-SniperHandlers.html#~listDelete">listDelete</a></li><li data-type='method' style='display: none;'><a href="module-SniperHandlers.html#~listUpdate">listUpdate</a></li></ul></li></ul><h3>Connections</h3><ul><li><a href="module-EthereumWeb.html">EthereumWeb</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-EthereumWeb.html#.closeEthereumRpcProvider">closeEthereumRpcProvider</a></li><li data-type='method' style='display: none;'><a href="module-EthereumWeb.html#.closeEthereumWssProvider">closeEthereumWssProvider</a></li><li data-type='method' style='display: none;'><a href="module-EthereumWeb.html#.getEthereumRpcProvider">getEthereumRpcProvider</a></li><li data-type='method' style='display: none;'><a href="module-EthereumWeb.html#.getEthereumWssProvider">getEthereumWssProvider</a></li><li data-type='method' style='display: none;'><a href="module-EthereumWeb.html#.isConnectionHealthy">isConnectionHealthy</a></li><li data-type='method' style='display: none;'><a href="module-EthereumWeb.html#.resetEthereumProviders">resetEthereumProviders</a></li><li data-type='method' style='display: none;'><a href="module-EthereumWeb.html#~attachEthereumWssListeners">attachEthereumWssListeners</a></li></ul></li><li><a href="module-SolanaWeb.html">SolanaWeb</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-SolanaWeb.html#.closeSolanaRpcConnection">closeSolanaRpcConnection</a></li><li data-type='method' style='display: none;'><a href="module-SolanaWeb.html#.closeSolanaWssConnection">closeSolanaWssConnection</a></li><li data-type='method' style='display: none;'><a href="module-SolanaWeb.html#.getSolanaRpcConnection">getSolanaRpcConnection</a></li><li data-type='method' style='display: none;'><a href="module-SolanaWeb.html#.getSolanaWssConnection">getSolanaWssConnection</a></li><li data-type='method' style='display: none;'><a href="module-SolanaWeb.html#.isRpcConnectionHealthy">isRpcConnectionHealthy</a></li><li data-type='method' style='display: none;'><a href="module-SolanaWeb.html#.resetSolanaConnections">resetSolanaConnections</a></li><li data-type='method' style='display: none;'><a href="module-SolanaWeb.html#~attachSolanaWssListeners">attachSolanaWssListeners</a></li></ul></li><li><a href="module-TronWeb.html">TronWeb</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-TronWeb.html#.closeTronRpcConnection">closeTronRpcConnection</a></li><li data-type='method' style='display: none;'><a href="module-TronWeb.html#.getTronRpcConnection">getTronRpcConnection</a></li><li data-type='method' style='display: none;'><a href="module-TronWeb.html#.isRpcConnectionHealthy">isRpcConnectionHealthy</a></li><li data-type='method' style='display: none;'><a href="module-TronWeb.html#.isTronWebReady">isTronWebReady</a></li><li data-type='method' style='display: none;'><a href="module-TronWeb.html#.resetTronConnections">resetTronConnections</a></li></ul></li></ul><h3>Scanners</h3><ul><li><a href="module-EthereumGasMonitor.html">EthereumGasMonitor</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-EthereumGasMonitor.html#~gasPrices">gasPrices</a></li><li data-type='method' style='display: none;'><a href="module-EthereumGasMonitor.html#~getAverageBlockTime">getAverageBlockTime</a></li><li data-type='method' style='display: none;'><a href="module-EthereumGasMonitor.html#~shouldEmitData">shouldEmitData</a></li></ul></li><li><a href="module-EthereumMempoolScanner.html">EthereumMempoolScanner</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-EthereumMempoolScanner.html#~processTransaction">processTransaction</a></li><li data-type='method' style='display: none;'><a href="module-EthereumMempoolScanner.html#~setupTransactionListener">setupTransactionListener</a></li><li data-type='method' style='display: none;'><a href="module-EthereumMempoolScanner.html#~startEthereumScanner">startEthereumScanner</a></li></ul></li><li><a href="module-ScannerRestartUtility.html">ScannerRestartUtility</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-ScannerRestartUtility.html#.delay">delay</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="module-ScannerRestartUtility.html#.restartScanner">restartScanner</a></li></ul></li><li><a href="module-SolanaLogScanner.html">SolanaLogScanner</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-SolanaLogScanner.html#~processSolanaLogs">processSolanaLogs</a></li><li data-type='method' style='display: none;'><a href="module-SolanaLogScanner.html#~setupLogMessageListener">setupLogMessageListener</a></li><li data-type='method' style='display: none;'><a href="module-SolanaLogScanner.html#~startSolanaScanner">startSolanaScanner</a></li><li data-type='method' style='display: none;'><a href="module-SolanaLogScanner.html#~subscribeToSolanaLogs">subscribeToSolanaLogs</a></li></ul></li><li><a href="module-TronEventScanner.html">TronEventScanner</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-TronEventScanner.html#~scanBlocks">scanBlocks</a></li><li data-type='method' style='display: none;'><a href="module-TronEventScanner.html#~startTronScanner">startTronScanner</a></li></ul></li></ul><h3>Clients</h3><ul><li><a href="module-DynamoDBClient.html">DynamoDBClient</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-DynamoDBClient.html#.closeAllDynamoDBClients">closeAllDynamoDBClients</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBClient.html#.getDynamoDBDocClient">getDynamoDBDocClient</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBClient.html#.getDynamoDBRawClient">getDynamoDBRawClient</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBClient.html#~getDynamoDBInstance">getDynamoDBInstance</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBClient.html#~setupClientListeners">setupClientListeners</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBClient.html#~withRetry">withRetry</a></li></ul></li><li><a href="module-GeckoApiClient.html">GeckoApiClient</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-GeckoApiClient.html#.closeGeckoClient">closeGeckoClient</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="module-GeckoApiClient.html#.geckoGet">geckoGet</a></li><li data-type='method' style='display: none;'><a href="module-GeckoApiClient.html#.geckoPost">geckoPost</a></li><li data-type='method' style='display: none;'><a href="module-GeckoApiClient.html#~initializeGeckoClient">initializeGeckoClient</a></li><li data-type='method' style='display: none;'><a href="module-GeckoApiClient.html#~withRetry">withRetry</a></li></ul></li><li><a href="module-JupiterClient.html">JupiterClient</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-JupiterClient.html#.closeAllJupiterClients">closeAllJupiterClients</a></li><li data-type='method' style='display: none;'><a href="module-JupiterClient.html#.getJupiterApiClient">getJupiterApiClient</a></li></ul></li><li><a href="module-MongoDBClient.html">MongoDBClient</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-MongoDBClient.html#.closeMongoClient">closeMongoClient</a></li><li data-type='method' style='display: none;'><a href="module-MongoDBClient.html#.getMongoClient">getMongoClient</a></li><li data-type='method' style='display: none;'><a href="module-MongoDBClient.html#.getMongoDB">getMongoDB</a></li><li data-type='method' style='display: none;'><a href="module-MongoDBClient.html#~getMongoInstance">getMongoInstance</a></li><li data-type='method' style='display: none;'><a href="module-MongoDBClient.html#~withRetry">withRetry</a></li></ul></li></ul><h3>Redis</h3><ul><li><a href="module-RedisChannels.html">RedisChannels</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-RedisChannels.html#.chains">chains</a></li><li data-type='member' style='display: none;'><a href="module-RedisChannels.html#.channels">channels</a></li><li data-type='member' style='display: none;'><a href="module-RedisChannels.html#.currencyChannels">currencyChannels</a></li><li data-type='member' style='display: none;'><a href="module-RedisChannels.html#.pendingConfigs">pendingConfigs</a></li><li data-type='member' style='display: none;'><a href="module-RedisChannels.html#.sniperChannels">sniperChannels</a></li><li data-type='member' style='display: none;'><a href="module-RedisChannels.html#~baseEvents">baseEvents</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="module-RedisChannels.html#~generateChainChannels">generateChainChannels</a></li></ul></li><li><a href="module-RedisConnections.html">RedisConnections</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-RedisConnections.html#.closeAllRedisClients">closeAllRedisClients</a></li><li data-type='method' style='display: none;'><a href="module-RedisConnections.html#.getRedisClient">getRedisClient</a></li><li data-type='method' style='display: none;'><a href="module-RedisConnections.html#.getRedisPublisherClient">getRedisPublisherClient</a></li><li data-type='method' style='display: none;'><a href="module-RedisConnections.html#.getRedisSubscriberClient">getRedisSubscriberClient</a></li><li data-type='method' style='display: none;'><a href="module-RedisConnections.html#~getRedisInstance">getRedisInstance</a></li><li data-type='method' style='display: none;'><a href="module-RedisConnections.html#~setupClientListeners">setupClientListeners</a></li></ul></li><li><a href="module-RedisSubscriptions.html">RedisSubscriptions</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-RedisSubscriptions.html#.setupRedisSubscriptions">setupRedisSubscriptions</a></li><li data-type='method' style='display: none;'><a href="module-RedisSubscriptions.html#~processRedisMessage">processRedisMessage</a></li></ul></li><li><a href="module-RedisSync.html">RedisSync</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-RedisSync.html#.startRedisSync">startRedisSync</a></li></ul></li></ul><h3>DynamoDB</h3><ul><li><a href="module-DynamoDBUtilities.html">DynamoDBUtilities</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-DynamoDBUtilities.html#.getUserWallets">getUserWallets</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBUtilities.html#.getUserWalletsAndKeys">getUserWalletsAndKeys</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBUtilities.html#.saveSniperTransaction">saveSniperTransaction</a></li></ul></li></ul><h3>MongoDB</h3><ul><li><a href="module-MongoDBUtilities.html">MongoDBUtilities</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-MongoDBUtilities.html#.getUserWallets">getUserWallets</a></li><li data-type='method' style='display: none;'><a href="module-MongoDBUtilities.html#.getUserWalletsAndKeys">getUserWalletsAndKeys</a></li><li data-type='method' style='display: none;'><a href="module-MongoDBUtilities.html#.saveSniperTransaction">saveSniperTransaction</a></li></ul></li></ul><h3>API-Clients</h3><ul><li><a href="module-GeckoAPI.html">GeckoAPI</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-GeckoAPI.html#.fetchCurrencyPrices">fetchCurrencyPrices</a></li></ul></li><li><a href="module-GoPlusAPI.html">GoPlusAPI</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-GoPlusAPI.html#.getContractInfo">getContractInfo</a></li></ul></li></ul><h3>Utilities</h3><ul><li><a href="module-ApplicationBootstrap.html">ApplicationBootstrap</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-ApplicationBootstrap.html#~startServices">startServices</a></li></ul></li><li><a href="module-UtilityFunctions.html">UtilityFunctions</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-UtilityFunctions.html#.COLORS">COLORS</a></li><li data-type='member' style='display: none;'><a href="module-UtilityFunctions.html#.formatAdditionalInfo">formatAdditionalInfo</a></li><li data-type='member' style='display: none;'><a href="module-UtilityFunctions.html#.isDevelopmentMode">isDevelopmentMode</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="module-UtilityFunctions.html#.delay">delay</a></li><li data-type='method' style='display: none;'><a href="module-UtilityFunctions.html#.fetchWithTimeout">fetchWithTimeout</a></li><li data-type='method' style='display: none;'><a href="module-UtilityFunctions.html#.logDebug">logDebug</a></li><li data-type='method' style='display: none;'><a href="module-UtilityFunctions.html#.logError">logError</a></li><li data-type='method' style='display: none;'><a href="module-UtilityFunctions.html#.logInfo">logInfo</a></li><li data-type='method' style='display: none;'><a href="module-UtilityFunctions.html#.logWarning">logWarning</a></li><li data-type='method' style='display: none;'><a href="module-UtilityFunctions.html#.playNotificationSound">playNotificationSound</a></li><li data-type='method' style='display: none;'><a href="module-UtilityFunctions.html#.retry">retry</a></li></ul></li><li><a href="module-WorkerManagement.html">WorkerManagement</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-WorkerManagement.html#.initializeHealthMonitoring">initializeHealthMonitoring</a></li><li data-type='method' style='display: none;'><a href="module-WorkerManagement.html#.monitorWorkerHealth">monitorWorkerHealth</a></li><li data-type='method' style='display: none;'><a href="module-WorkerManagement.html#.restartWorker">restartWorker</a></li><li data-type='method' style='display: none;'><a href="module-WorkerManagement.html#.shutdownWorkers">shutdownWorkers</a></li><li data-type='method' style='display: none;'><a href="module-WorkerManagement.html#.startScanners">startScanners</a></li><li data-type='method' style='display: none;'><a href="module-WorkerManagement.html#.startWorker">startWorker</a></li></ul></li></ul><h3>Configurations</h3><ul><li><a href="module-DynamoDBConfig.html">DynamoDBConfig</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-DynamoDBConfig.html#.AWS_CONFIG">AWS_CONFIG</a></li></ul></li><li><a href="module-EthereumConfig.html">EthereumConfig</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-EthereumConfig.html#.ETHEREUM_CONFIG">ETHEREUM_CONFIG</a></li></ul></li><li><a href="module-GeckoConfig.html">GeckoConfig</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-GeckoConfig.html#.GECKO_CONFIG">GECKO_CONFIG</a></li></ul></li><li><a href="module-MongoConfig.html">MongoConfig</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-MongoConfig.html#.MONGO_CONFIG">MONGO_CONFIG</a></li></ul></li><li><a href="module-RedisConfig.html">RedisConfig</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-RedisConfig.html#.REDIS_CONFIG">REDIS_CONFIG</a></li></ul></li><li><a href="module-SolanaConfig.html">SolanaConfig</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-SolanaConfig.html#.SOLANA_CONFIG">SOLANA_CONFIG</a></li></ul></li><li><a href="module-TronConfig.html">TronConfig</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-TronConfig.html#.TRON_CONFIG">TRON_CONFIG</a></li></ul></li><li><a href="module-WorkerConfig.html">WorkerConfig</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-WorkerConfig.html#.WORKER_CONFIG">WORKER_CONFIG</a></li></ul></li></ul><h3>ABI-Contracts</h3><ul><li><a href="module-CustomABIs.html">CustomABIs</a></li><li><a href="module-JsonLoader.html">JsonLoader</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-JsonLoader.html#.loadJson">loadJson</a></li></ul></li><li class="level-hide"><a href="module-JsonLoader.html#.loadJson">loadJson</a></li><li><a href="module-RaydiumABIs.html">RaydiumABIs</a></li><li><a href="module-SunPumpABI.html">SunPumpABI</a></li><li><a href="module-UniswapV2ABIs.html">UniswapV2ABIs</a></li><li><a href="module-UniswapV3ABIs.html">UniswapV3ABIs</a></li></ul><h3>Info</h3><ul><li><a href="module-Documentation.html">Documentation</a></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">SunPumpABI</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+                <div class="description usertext"><p>Exports the ABI for the Sun Pump contract, used for specific DeFi mechanics and custom operations.</p>
+<h3>Included ABIs:</h3>
+<ul>
+<li><strong><code>sunPumpContractABI</code></strong>: ABI for the Sun Pump contract.</li>
+</ul>
+<h3>Key Features:</h3>
+<ul>
+<li><strong>Custom DeFi Operations</strong>: Facilitates specialized contract interactions for pumping mechanisms.</li>
+</ul></div>
+            
+
+            
+                
+
+
+
+
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+    
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="~sunPumpContractABI"><span class="type-signature type-signature-inner, constant">(inner, constant) </span>sunPumpContractABI<span class="type-signature"> :Array.&lt;Object></span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>ABI for interacting with the Sun Pump contract, enabling operations related to specific DeFi mechanics such as token launches, fee management, and token trading.</p>
+<h3>Events:</h3>
+<ul>
+<li><strong><code>LaunchPending</code></strong>:
+<ul>
+<li>Emitted when a token is pending launch.</li>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>token (address)</code>: The address of the pending token.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>LauncherChanged</code></strong>:
+<ul>
+<li>Emitted when the launcher address changes.</li>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>oldLauncher (address)</code>: The previous launcher address.</li>
+<li><code>newLauncher (address)</code>: The new launcher address.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>MinTxFeeSet</code></strong> and <strong><code>MintFeeSet</code></strong>:
+<ul>
+<li>Emitted when minimum transaction or mint fees are updated.</li>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>oldFee (uint256)</code>: The previous fee.</li>
+<li><code>newFee (uint256)</code>: The updated fee.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>OperatorChanged</code></strong>:
+<ul>
+<li>Emitted when the operator address changes.</li>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>oldOperator (address)</code>: The previous operator.</li>
+<li><code>newOperator (address)</code>: The new operator.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>OwnerChanged</code></strong> and <strong><code>PendingOwnerSet</code></strong>:
+<ul>
+<li>Emitted when the contract ownership changes or a new owner is set as pending.</li>
+</ul>
+</li>
+<li><strong><code>PurchaseFeeSet</code></strong> and <strong><code>SaleFeeSet</code></strong>:
+<ul>
+<li>Emitted when purchase or sale fees are updated.</li>
+</ul>
+</li>
+<li><strong><code>TokenCreate</code></strong> and <strong><code>TokenLaunched</code></strong>:
+<ul>
+<li>Emitted during token creation and launch.</li>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>tokenAddress (address)</code>: Address of the token.</li>
+<li><code>tokenIndex (uint256)</code>: The index of the token in the system.</li>
+<li><code>creator (address)</code>: Address of the token creator.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Functions:</h3>
+<ul>
+<li><strong>View Functions</strong>:
+<ul>
+<li><code>LAUNCH_FEE()</code>: Returns the launch fee.</li>
+<li><code>TOKEN_SUPPLY()</code>: Returns the total token supply.</li>
+<li><code>getPrice(address token)</code>: Returns the current price of the specified token.</li>
+<li><code>getTrxAmountBySale(address token, uint256 tokenAmount)</code>: Returns the amount of TRX for a given token sale amount.</li>
+</ul>
+</li>
+<li><strong>Write Functions</strong>:
+<ul>
+<li><code>initialize(address _vault, address _v2Router, uint256 _salefee, uint256 _purchasefee)</code>:
+Initializes the contract with the specified parameters.</li>
+<li><code>purchaseToken(address token, uint256 AmountMin)</code>:
+Allows a user to purchase tokens with a minimum amount of TRX.</li>
+<li><code>saleToken(address token, uint256 tokenAmount, uint256 AmountMin)</code>:
+Allows a user to sell tokens with a minimum TRX amount received.</li>
+<li><code>setMinTxFee(uint256 newFee)</code>: Updates the minimum transaction fee.</li>
+<li><code>setMintFee(uint256 newFee)</code>: Updates the minting fee.</li>
+</ul>
+</li>
+</ul>
+<h3>Key Features:</h3>
+<ul>
+<li><strong>Token Launching</strong>: Supports launching new tokens with configurable parameters.</li>
+<li><strong>Dynamic Fee Management</strong>: Allows setting and updating various fee types.</li>
+<li><strong>Trading Operations</strong>: Includes functions for purchasing and selling tokens, with detailed fee structures.</li>
+<li><strong>Event Logging</strong>: Comprehensive event tracking for key operations.</li>
+</ul></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <!-- <p>ABI for interacting with the Sun Pump contract, enabling operations related to specific DeFi mechanics such as token launches, fee management, and token trading.</p>
+<h3>Events:</h3>
+<ul>
+<li><strong><code>LaunchPending</code></strong>:
+<ul>
+<li>Emitted when a token is pending launch.</li>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>token (address)</code>: The address of the pending token.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>LauncherChanged</code></strong>:
+<ul>
+<li>Emitted when the launcher address changes.</li>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>oldLauncher (address)</code>: The previous launcher address.</li>
+<li><code>newLauncher (address)</code>: The new launcher address.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>MinTxFeeSet</code></strong> and <strong><code>MintFeeSet</code></strong>:
+<ul>
+<li>Emitted when minimum transaction or mint fees are updated.</li>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>oldFee (uint256)</code>: The previous fee.</li>
+<li><code>newFee (uint256)</code>: The updated fee.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>OperatorChanged</code></strong>:
+<ul>
+<li>Emitted when the operator address changes.</li>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>oldOperator (address)</code>: The previous operator.</li>
+<li><code>newOperator (address)</code>: The new operator.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>OwnerChanged</code></strong> and <strong><code>PendingOwnerSet</code></strong>:
+<ul>
+<li>Emitted when the contract ownership changes or a new owner is set as pending.</li>
+</ul>
+</li>
+<li><strong><code>PurchaseFeeSet</code></strong> and <strong><code>SaleFeeSet</code></strong>:
+<ul>
+<li>Emitted when purchase or sale fees are updated.</li>
+</ul>
+</li>
+<li><strong><code>TokenCreate</code></strong> and <strong><code>TokenLaunched</code></strong>:
+<ul>
+<li>Emitted during token creation and launch.</li>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>tokenAddress (address)</code>: Address of the token.</li>
+<li><code>tokenIndex (uint256)</code>: The index of the token in the system.</li>
+<li><code>creator (address)</code>: Address of the token creator.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Functions:</h3>
+<ul>
+<li><strong>View Functions</strong>:
+<ul>
+<li><code>LAUNCH_FEE()</code>: Returns the launch fee.</li>
+<li><code>TOKEN_SUPPLY()</code>: Returns the total token supply.</li>
+<li><code>getPrice(address token)</code>: Returns the current price of the specified token.</li>
+<li><code>getTrxAmountBySale(address token, uint256 tokenAmount)</code>: Returns the amount of TRX for a given token sale amount.</li>
+</ul>
+</li>
+<li><strong>Write Functions</strong>:
+<ul>
+<li><code>initialize(address _vault, address _v2Router, uint256 _salefee, uint256 _purchasefee)</code>:
+Initializes the contract with the specified parameters.</li>
+<li><code>purchaseToken(address token, uint256 AmountMin)</code>:
+Allows a user to purchase tokens with a minimum amount of TRX.</li>
+<li><code>saleToken(address token, uint256 tokenAmount, uint256 AmountMin)</code>:
+Allows a user to sell tokens with a minimum TRX amount received.</li>
+<li><code>setMinTxFee(uint256 newFee)</code>: Updates the minimum transaction fee.</li>
+<li><code>setMintFee(uint256 newFee)</code>: Updates the minting fee.</li>
+</ul>
+</li>
+</ul>
+<h3>Key Features:</h3>
+<ul>
+<li><strong>Token Launching</strong>: Supports launching new tokens with configurable parameters.</li>
+<li><strong>Dynamic Fee Management</strong>: Allows setting and updating various fee types.</li>
+<li><strong>Trading Operations</strong>: Includes functions for purchasing and selling tokens, with detailed fee structures.</li>
+<li><strong>Event Logging</strong>: Comprehensive event tracking for key operations.</li>
+</ul> -->
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array.&lt;Object></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a> on Wed Jan 01 2025 23:34:54 GMT-0500 (Eastern Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>

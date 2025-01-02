@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>UniswapV2ABIs - On-Chain Dynamics</title>
+    
+    <meta name="description" content="On-Chain Dynamics Sniper Server Documentation" />
+    
+    
+    
+    <meta property="og:title" content="On-Chain Dynamics"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="tabicon.png"/>
+    <meta property="og:site_name" content="On-Chain Dynamics Sniper Server"/>
+    <meta property="og:url" content=""/>
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav class="wrap">
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    
+    <h2><a href="index.html">Home</a></h2><h2><a href="https://www.onchaindynamics.io" target="_blank" class="menu-item" id="website_link" >Website</a></h2><h2><a href="https://forum.onchaindynamics.io" target="_blank" class="menu-item" id="forum_link" >Forum</a></h2><h3>Ethereum</h3><ul><li><a href="module-EthereumFlashbotUtils.html">EthereumFlashbotUtils</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-EthereumFlashbotUtils.html#.FLASHBOTS_AUTH_KEY">FLASHBOTS_AUTH_KEY</a></li><li data-type='member' style='display: none;'><a href="module-EthereumFlashbotUtils.html#.FLASHBOTS_RPC_URL">FLASHBOTS_RPC_URL</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="module-EthereumFlashbotUtils.html#.getNextFlashbotRequestId">getNextFlashbotRequestId</a></li><li data-type='method' style='display: none;'><a href="module-EthereumFlashbotUtils.html#.toRpcHexString">toRpcHexString</a></li></ul></li><li><a href="module-EthereumFlashbots.html">EthereumFlashbots</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-EthereumFlashbots.html#.flashbotBundleTxn">flashbotBundleTxn</a></li><li data-type='method' style='display: none;'><a href="module-EthereumFlashbots.html#.flashbotPrivateTxn">flashbotPrivateTxn</a></li><li data-type='method' style='display: none;'><a href="module-EthereumFlashbots.html#.flashbotRequest">flashbotRequest</a></li></ul></li><li><a href="module-EthereumGas.html">EthereumGas</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-EthereumGas.html#.gasConfigBuy">gasConfigBuy</a></li><li data-type='method' style='display: none;'><a href="module-EthereumGas.html#.getBlockAndFeeData">getBlockAndFeeData</a></li></ul></li><li><a href="module-EthereumTokenPairInfo.html">EthereumTokenPairInfo</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-EthereumTokenPairInfo.html#.fetchTokenAndPairInfo">fetchTokenAndPairInfo</a></li><li data-type='method' style='display: none;'><a href="module-EthereumTokenPairInfo.html#.generateFallbackData">generateFallbackData</a></li><li data-type='method' style='display: none;'><a href="module-EthereumTokenPairInfo.html#.getLiquidityAndPriceInfo">getLiquidityAndPriceInfo</a></li><li data-type='method' style='display: none;'><a href="module-EthereumTokenPairInfo.html#.getPairAndTokenInfo">getPairAndTokenInfo</a></li></ul></li><li><a href="module-EthereumTradeExecution.html">EthereumTradeExecution</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-EthereumTradeExecution.html#.executeFlashbotBundleBuy">executeFlashbotBundleBuy</a></li><li data-type='method' style='display: none;'><a href="module-EthereumTradeExecution.html#.executeUniswapV2Buy">executeUniswapV2Buy</a></li></ul></li><li><a href="module-EthereumTradeUtils.html">EthereumTradeUtils</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-EthereumTradeUtils.html#.TRANSFER_TOPIC">TRANSFER_TOPIC</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="module-EthereumTradeUtils.html#.findKeyByAddress">findKeyByAddress</a></li><li data-type='method' style='display: none;'><a href="module-EthereumTradeUtils.html#.getErrorMessage">getErrorMessage</a></li></ul></li><li><a href="module-EthereumTransactions.html">EthereumTransactions</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-EthereumTransactions.html#.constructTxDetails">constructTxDetails</a></li><li data-type='method' style='display: none;'><a href="module-EthereumTransactions.html#.decodeTransaction">decodeTransaction</a></li><li data-type='method' style='display: none;'><a href="module-EthereumTransactions.html#.determineTokenAddress">determineTokenAddress</a></li><li data-type='method' style='display: none;'><a href="module-EthereumTransactions.html#.extractTransactionData">extractTransactionData</a></li><li data-type='method' style='display: none;'><a href="module-EthereumTransactions.html#.getBuyReceipts">getBuyReceipts</a></li><li data-type='method' style='display: none;'><a href="module-EthereumTransactions.html#.waitForTargetBlock">waitForTargetBlock</a></li><li data-type='method' style='display: none;'><a href="module-EthereumTransactions.html#.waitForTransactionReceipt">waitForTransactionReceipt</a></li></ul></li><li><a href="module-EthereumUtils.html">EthereumUtils</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-EthereumUtils.html#.ethPriceInUSD">ethPriceInUSD</a></li><li data-type='member' style='display: none;'><a href="module-EthereumUtils.html#.ethereumTransactionQueue">ethereumTransactionQueue</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="module-EthereumUtils.html#.checkFunction">checkFunction</a></li><li data-type='method' style='display: none;'><a href="module-EthereumUtils.html#.isValidEthereumAddress">isValidEthereumAddress</a></li><li data-type='method' style='display: none;'><a href="module-EthereumUtils.html#.normalizeEthereumAddress">normalizeEthereumAddress</a></li></ul></li><li><a href="module-UniswapV2Constants.html">UniswapV2Constants</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-UniswapV2Constants.html#.WETH">WETH</a></li><li data-type='member' style='display: none;'><a href="module-UniswapV2Constants.html#.addresses">addresses</a></li><li data-type='member' style='display: none;'><a href="module-UniswapV2Constants.html#.ocdRouterAddress">ocdRouterAddress</a></li><li data-type='member' style='display: none;'><a href="module-UniswapV2Constants.html#.uniswapV2FactoryAddress">uniswapV2FactoryAddress</a></li><li data-type='member' style='display: none;'><a href="module-UniswapV2Constants.html#.uniswapV2Functions">uniswapV2Functions</a></li><li data-type='member' style='display: none;'><a href="module-UniswapV2Constants.html#.uniswapV2InputParams">uniswapV2InputParams</a></li><li data-type='member' style='display: none;'><a href="module-UniswapV2Constants.html#.uniswapV2RouterAddress">uniswapV2RouterAddress</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="module-UniswapV2Constants.html#.getUniswapV2Factory">getUniswapV2Factory</a></li><li data-type='method' style='display: none;'><a href="module-UniswapV2Constants.html#.getUniswapV2Router">getUniswapV2Router</a></li><li data-type='method' style='display: none;'><a href="module-UniswapV2Constants.html#~initializeFactory">initializeFactory</a></li><li data-type='method' style='display: none;'><a href="module-UniswapV2Constants.html#~initializeRouter">initializeRouter</a></li><li data-type='method' style='display: none;'><a href="module-UniswapV2Constants.html#~lazyInitialize">lazyInitialize</a></li></ul></li><li><a href="module-UniswapV2Utilities.html">UniswapV2Utilities</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-UniswapV2Utilities.html#.filterPendingConfigs">filterPendingConfigs</a></li><li data-type='method' style='display: none;'><a href="module-UniswapV2Utilities.html#.handleUniswapV2Config">handleUniswapV2Config</a></li><li data-type='method' style='display: none;'><a href="module-UniswapV2Utilities.html#.handleUniswapV2Transaction">handleUniswapV2Transaction</a></li><li data-type='method' style='display: none;'><a href="module-UniswapV2Utilities.html#.processUniswapV2Buy">processUniswapV2Buy</a></li><li data-type='method' style='display: none;'><a href="module-UniswapV2Utilities.html#.processUniswapV2Configs">processUniswapV2Configs</a></li></ul></li></ul><h3>Solana</h3><ul><li><a href="module-RaydiumUtilities.html">RaydiumUtilities</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-RaydiumUtilities.html#.filterPendingConfigs">filterPendingConfigs</a></li><li data-type='method' style='display: none;'><a href="module-RaydiumUtilities.html#.handleRaydiumConfig">handleRaydiumConfig</a></li><li data-type='method' style='display: none;'><a href="module-RaydiumUtilities.html#.handleRaydiumLogEvent">handleRaydiumLogEvent</a></li><li data-type='method' style='display: none;'><a href="module-RaydiumUtilities.html#.processRaydiumConfigs">processRaydiumConfigs</a></li></ul></li><li><a href="module-SolanaConstants.html">SolanaConstants</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-SolanaConstants.html#.PUMP_FUN_SIGNER">PUMP_FUN_SIGNER</a></li><li data-type='member' style='display: none;'><a href="module-SolanaConstants.html#.RAYDIUM_INSTRUCTIONS">RAYDIUM_INSTRUCTIONS</a></li><li data-type='member' style='display: none;'><a href="module-SolanaConstants.html#.RAYDIUM_LP_V4_ID">RAYDIUM_LP_V4_ID</a></li><li data-type='member' style='display: none;'><a href="module-SolanaConstants.html#.SOL_ADDRESS">SOL_ADDRESS</a></li><li data-type='member' style='display: none;'><a href="module-SolanaConstants.html#.STANDARD_AMM_ID">STANDARD_AMM_ID</a></li></ul></li><li><a href="module-SolanaTokenLiquidity.html">SolanaTokenLiquidity</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-SolanaTokenLiquidity.html#.getLiquidityAndTokenInfo">getLiquidityAndTokenInfo</a></li><li data-type='method' style='display: none;'><a href="module-SolanaTokenLiquidity.html#.getTokenDetailsSolana">getTokenDetailsSolana</a></li><li data-type='method' style='display: none;'><a href="module-SolanaTokenLiquidity.html#.getTokenMetaData">getTokenMetaData</a></li></ul></li><li><a href="module-SolanaTransactions.html">SolanaTransactions</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-SolanaTransactions.html#.checkPumpFunMigration">checkPumpFunMigration</a></li><li data-type='method' style='display: none;'><a href="module-SolanaTransactions.html#.decodeLegacyTransaction">decodeLegacyTransaction</a></li><li data-type='method' style='display: none;'><a href="module-SolanaTransactions.html#.decodeVersionedTransaction">decodeVersionedTransaction</a></li><li data-type='method' style='display: none;'><a href="module-SolanaTransactions.html#.extractRaydiumPoolDetails">extractRaydiumPoolDetails</a></li><li data-type='method' style='display: none;'><a href="module-SolanaTransactions.html#.extractTokenCreator">extractTokenCreator</a></li><li data-type='method' style='display: none;'><a href="module-SolanaTransactions.html#.extractTransactionData">extractTransactionData</a></li><li data-type='method' style='display: none;'><a href="module-SolanaTransactions.html#.fetchTransactionDetails">fetchTransactionDetails</a></li><li data-type='method' style='display: none;'><a href="module-SolanaTransactions.html#.parseReservesFromLogs">parseReservesFromLogs</a></li></ul></li><li><a href="module-SolanaUtils.html">SolanaUtils</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-SolanaUtils.html#.solPriceInUSD">solPriceInUSD</a></li><li data-type='member' style='display: none;'><a href="module-SolanaUtils.html#.solanaTransactionQueue">solanaTransactionQueue</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="module-SolanaUtils.html#.getDefaultSolanaWallet">getDefaultSolanaWallet</a></li><li data-type='method' style='display: none;'><a href="module-SolanaUtils.html#.isValidSolanaAddress">isValidSolanaAddress</a></li></ul></li></ul><h3>Tron</h3><ul><li><a href="module-SunPumpConstants.html">SunPumpConstants</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-SunPumpConstants.html#.addresses">addresses</a></li><li data-type='member' style='display: none;'><a href="module-SunPumpConstants.html#.sunPumpContractEvents">sunPumpContractEvents</a></li><li data-type='member' style='display: none;'><a href="module-SunPumpConstants.html#.sunPumpEventMethodIds">sunPumpEventMethodIds</a></li><li data-type='member' style='display: none;'><a href="module-SunPumpConstants.html#.sunPumpEventParams">sunPumpEventParams</a></li><li data-type='member' style='display: none;'><a href="module-SunPumpConstants.html#.sunPumpInputParams">sunPumpInputParams</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="module-SunPumpConstants.html#.getSunPumpContract">getSunPumpContract</a></li><li data-type='method' style='display: none;'><a href="module-SunPumpConstants.html#~initializeContract">initializeContract</a></li><li data-type='method' style='display: none;'><a href="module-SunPumpConstants.html#~lazyInitialize">lazyInitialize</a></li></ul></li><li><a href="module-SunPumpUtilities.html">SunPumpUtilities</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-SunPumpUtilities.html#.exports.processTronEvents">exports.processTronEvents</a></li><li data-type='method' style='display: none;'><a href="module-SunPumpUtilities.html#.filterPendingConfigs">filterPendingConfigs</a></li><li data-type='method' style='display: none;'><a href="module-SunPumpUtilities.html#.handleSunPumpConfig">handleSunPumpConfig</a></li><li data-type='method' style='display: none;'><a href="module-SunPumpUtilities.html#.handleTokenCreateEvent">handleTokenCreateEvent</a></li><li data-type='method' style='display: none;'><a href="module-SunPumpUtilities.html#.processSunPumpConfigs">processSunPumpConfigs</a></li></ul></li><li><a href="module-TronTokenLiquidity.html">TronTokenLiquidity</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-TronTokenLiquidity.html#.generateFallbackData">generateFallbackData</a></li><li data-type='method' style='display: none;'><a href="module-TronTokenLiquidity.html#.getLiquidityAndTokenInfo">getLiquidityAndTokenInfo</a></li><li data-type='method' style='display: none;'><a href="module-TronTokenLiquidity.html#.getPoolDetailsSunPump">getPoolDetailsSunPump</a></li><li data-type='method' style='display: none;'><a href="module-TronTokenLiquidity.html#.getTokenDetailsTron">getTokenDetailsTron</a></li></ul></li><li><a href="module-TronTransactionUtils.html">TronTransactionUtils</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-TronTransactionUtils.html#.tronTransactionQueue">tronTransactionQueue</a></li><li data-type='member' style='display: none;'><a href="module-TronTransactionUtils.html#.trxPriceInUSD">trxPriceInUSD</a></li><li data-type='member' style='display: none;'><a href="module-TronTransactionUtils.html#.waitForNextBlock">waitForNextBlock</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="module-TronTransactionUtils.html#.fetchCurrentBlockNumber">fetchCurrentBlockNumber</a></li><li data-type='method' style='display: none;'><a href="module-TronTransactionUtils.html#.isValidTronAddress">isValidTronAddress</a></li></ul></li><li><a href="module-TronTransactions.html">TronTransactions</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-TronTransactions.html#.checkTronTransaction">checkTronTransaction</a></li><li data-type='method' style='display: none;'><a href="module-TronTransactions.html#.extractTronAddresses">extractTronAddresses</a></li></ul></li></ul><h3>Sniper</h3><ul><li><a href="module-SniperFunctions.html">SniperFunctions</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-SniperFunctions.html#.addOrUpdateConfig">addOrUpdateConfig</a></li><li data-type='method' style='display: none;'><a href="module-SniperFunctions.html#.deleteConfig">deleteConfig</a></li><li data-type='method' style='display: none;'><a href="module-SniperFunctions.html#.getPendingConfigs">getPendingConfigs</a></li><li data-type='method' style='display: none;'><a href="module-SniperFunctions.html#.getSniperList">getSniperList</a></li><li data-type='method' style='display: none;'><a href="module-SniperFunctions.html#.initializePendingConfigs">initializePendingConfigs</a></li><li data-type='method' style='display: none;'><a href="module-SniperFunctions.html#.retrieveConfigsByUserId">retrieveConfigsByUserId</a></li><li data-type='method' style='display: none;'><a href="module-SniperFunctions.html#.setConfigInactive">setConfigInactive</a></li><li data-type='method' style='display: none;'><a href="module-SniperFunctions.html#.updateAggregates">updateAggregates</a></li><li data-type='method' style='display: none;'><a href="module-SniperFunctions.html#.updateGlobalFlag">updateGlobalFlag</a></li></ul></li><li><a href="module-SniperHandlers.html">SniperHandlers</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-SniperHandlers.html#.handleSniperUpdates">handleSniperUpdates</a></li><li data-type='method' style='display: none;'><a href="module-SniperHandlers.html#~activityUpdate">activityUpdate</a></li><li data-type='method' style='display: none;'><a href="module-SniperHandlers.html#~listDelete">listDelete</a></li><li data-type='method' style='display: none;'><a href="module-SniperHandlers.html#~listUpdate">listUpdate</a></li></ul></li></ul><h3>Connections</h3><ul><li><a href="module-EthereumWeb.html">EthereumWeb</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-EthereumWeb.html#.closeEthereumRpcProvider">closeEthereumRpcProvider</a></li><li data-type='method' style='display: none;'><a href="module-EthereumWeb.html#.closeEthereumWssProvider">closeEthereumWssProvider</a></li><li data-type='method' style='display: none;'><a href="module-EthereumWeb.html#.getEthereumRpcProvider">getEthereumRpcProvider</a></li><li data-type='method' style='display: none;'><a href="module-EthereumWeb.html#.getEthereumWssProvider">getEthereumWssProvider</a></li><li data-type='method' style='display: none;'><a href="module-EthereumWeb.html#.isConnectionHealthy">isConnectionHealthy</a></li><li data-type='method' style='display: none;'><a href="module-EthereumWeb.html#.resetEthereumProviders">resetEthereumProviders</a></li><li data-type='method' style='display: none;'><a href="module-EthereumWeb.html#~attachEthereumWssListeners">attachEthereumWssListeners</a></li></ul></li><li><a href="module-SolanaWeb.html">SolanaWeb</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-SolanaWeb.html#.closeSolanaRpcConnection">closeSolanaRpcConnection</a></li><li data-type='method' style='display: none;'><a href="module-SolanaWeb.html#.closeSolanaWssConnection">closeSolanaWssConnection</a></li><li data-type='method' style='display: none;'><a href="module-SolanaWeb.html#.getSolanaRpcConnection">getSolanaRpcConnection</a></li><li data-type='method' style='display: none;'><a href="module-SolanaWeb.html#.getSolanaWssConnection">getSolanaWssConnection</a></li><li data-type='method' style='display: none;'><a href="module-SolanaWeb.html#.isRpcConnectionHealthy">isRpcConnectionHealthy</a></li><li data-type='method' style='display: none;'><a href="module-SolanaWeb.html#.resetSolanaConnections">resetSolanaConnections</a></li><li data-type='method' style='display: none;'><a href="module-SolanaWeb.html#~attachSolanaWssListeners">attachSolanaWssListeners</a></li></ul></li><li><a href="module-TronWeb.html">TronWeb</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-TronWeb.html#.closeTronRpcConnection">closeTronRpcConnection</a></li><li data-type='method' style='display: none;'><a href="module-TronWeb.html#.getTronRpcConnection">getTronRpcConnection</a></li><li data-type='method' style='display: none;'><a href="module-TronWeb.html#.isRpcConnectionHealthy">isRpcConnectionHealthy</a></li><li data-type='method' style='display: none;'><a href="module-TronWeb.html#.isTronWebReady">isTronWebReady</a></li><li data-type='method' style='display: none;'><a href="module-TronWeb.html#.resetTronConnections">resetTronConnections</a></li></ul></li></ul><h3>Scanners</h3><ul><li><a href="module-EthereumGasMonitor.html">EthereumGasMonitor</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-EthereumGasMonitor.html#~gasPrices">gasPrices</a></li><li data-type='method' style='display: none;'><a href="module-EthereumGasMonitor.html#~getAverageBlockTime">getAverageBlockTime</a></li><li data-type='method' style='display: none;'><a href="module-EthereumGasMonitor.html#~shouldEmitData">shouldEmitData</a></li></ul></li><li><a href="module-EthereumMempoolScanner.html">EthereumMempoolScanner</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-EthereumMempoolScanner.html#~processTransaction">processTransaction</a></li><li data-type='method' style='display: none;'><a href="module-EthereumMempoolScanner.html#~setupTransactionListener">setupTransactionListener</a></li><li data-type='method' style='display: none;'><a href="module-EthereumMempoolScanner.html#~startEthereumScanner">startEthereumScanner</a></li></ul></li><li><a href="module-ScannerRestartUtility.html">ScannerRestartUtility</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-ScannerRestartUtility.html#.delay">delay</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="module-ScannerRestartUtility.html#.restartScanner">restartScanner</a></li></ul></li><li><a href="module-SolanaLogScanner.html">SolanaLogScanner</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-SolanaLogScanner.html#~processSolanaLogs">processSolanaLogs</a></li><li data-type='method' style='display: none;'><a href="module-SolanaLogScanner.html#~setupLogMessageListener">setupLogMessageListener</a></li><li data-type='method' style='display: none;'><a href="module-SolanaLogScanner.html#~startSolanaScanner">startSolanaScanner</a></li><li data-type='method' style='display: none;'><a href="module-SolanaLogScanner.html#~subscribeToSolanaLogs">subscribeToSolanaLogs</a></li></ul></li><li><a href="module-TronEventScanner.html">TronEventScanner</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-TronEventScanner.html#~scanBlocks">scanBlocks</a></li><li data-type='method' style='display: none;'><a href="module-TronEventScanner.html#~startTronScanner">startTronScanner</a></li></ul></li></ul><h3>Clients</h3><ul><li><a href="module-DynamoDBClient.html">DynamoDBClient</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-DynamoDBClient.html#.closeAllDynamoDBClients">closeAllDynamoDBClients</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBClient.html#.getDynamoDBDocClient">getDynamoDBDocClient</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBClient.html#.getDynamoDBRawClient">getDynamoDBRawClient</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBClient.html#~getDynamoDBInstance">getDynamoDBInstance</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBClient.html#~setupClientListeners">setupClientListeners</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBClient.html#~withRetry">withRetry</a></li></ul></li><li><a href="module-GeckoApiClient.html">GeckoApiClient</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-GeckoApiClient.html#.closeGeckoClient">closeGeckoClient</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="module-GeckoApiClient.html#.geckoGet">geckoGet</a></li><li data-type='method' style='display: none;'><a href="module-GeckoApiClient.html#.geckoPost">geckoPost</a></li><li data-type='method' style='display: none;'><a href="module-GeckoApiClient.html#~initializeGeckoClient">initializeGeckoClient</a></li><li data-type='method' style='display: none;'><a href="module-GeckoApiClient.html#~withRetry">withRetry</a></li></ul></li><li><a href="module-JupiterClient.html">JupiterClient</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-JupiterClient.html#.closeAllJupiterClients">closeAllJupiterClients</a></li><li data-type='method' style='display: none;'><a href="module-JupiterClient.html#.getJupiterApiClient">getJupiterApiClient</a></li></ul></li><li><a href="module-MongoDBClient.html">MongoDBClient</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-MongoDBClient.html#.closeMongoClient">closeMongoClient</a></li><li data-type='method' style='display: none;'><a href="module-MongoDBClient.html#.getMongoClient">getMongoClient</a></li><li data-type='method' style='display: none;'><a href="module-MongoDBClient.html#.getMongoDB">getMongoDB</a></li><li data-type='method' style='display: none;'><a href="module-MongoDBClient.html#~getMongoInstance">getMongoInstance</a></li><li data-type='method' style='display: none;'><a href="module-MongoDBClient.html#~withRetry">withRetry</a></li></ul></li></ul><h3>Redis</h3><ul><li><a href="module-RedisChannels.html">RedisChannels</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-RedisChannels.html#.chains">chains</a></li><li data-type='member' style='display: none;'><a href="module-RedisChannels.html#.channels">channels</a></li><li data-type='member' style='display: none;'><a href="module-RedisChannels.html#.currencyChannels">currencyChannels</a></li><li data-type='member' style='display: none;'><a href="module-RedisChannels.html#.pendingConfigs">pendingConfigs</a></li><li data-type='member' style='display: none;'><a href="module-RedisChannels.html#.sniperChannels">sniperChannels</a></li><li data-type='member' style='display: none;'><a href="module-RedisChannels.html#~baseEvents">baseEvents</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="module-RedisChannels.html#~generateChainChannels">generateChainChannels</a></li></ul></li><li><a href="module-RedisConnections.html">RedisConnections</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-RedisConnections.html#.closeAllRedisClients">closeAllRedisClients</a></li><li data-type='method' style='display: none;'><a href="module-RedisConnections.html#.getRedisClient">getRedisClient</a></li><li data-type='method' style='display: none;'><a href="module-RedisConnections.html#.getRedisPublisherClient">getRedisPublisherClient</a></li><li data-type='method' style='display: none;'><a href="module-RedisConnections.html#.getRedisSubscriberClient">getRedisSubscriberClient</a></li><li data-type='method' style='display: none;'><a href="module-RedisConnections.html#~getRedisInstance">getRedisInstance</a></li><li data-type='method' style='display: none;'><a href="module-RedisConnections.html#~setupClientListeners">setupClientListeners</a></li></ul></li><li><a href="module-RedisSubscriptions.html">RedisSubscriptions</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-RedisSubscriptions.html#.setupRedisSubscriptions">setupRedisSubscriptions</a></li><li data-type='method' style='display: none;'><a href="module-RedisSubscriptions.html#~processRedisMessage">processRedisMessage</a></li></ul></li><li><a href="module-RedisSync.html">RedisSync</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-RedisSync.html#.startRedisSync">startRedisSync</a></li></ul></li></ul><h3>DynamoDB</h3><ul><li><a href="module-DynamoDBUtilities.html">DynamoDBUtilities</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-DynamoDBUtilities.html#.getUserWallets">getUserWallets</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBUtilities.html#.getUserWalletsAndKeys">getUserWalletsAndKeys</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBUtilities.html#.saveSniperTransaction">saveSniperTransaction</a></li></ul></li></ul><h3>MongoDB</h3><ul><li><a href="module-MongoDBUtilities.html">MongoDBUtilities</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-MongoDBUtilities.html#.getUserWallets">getUserWallets</a></li><li data-type='method' style='display: none;'><a href="module-MongoDBUtilities.html#.getUserWalletsAndKeys">getUserWalletsAndKeys</a></li><li data-type='method' style='display: none;'><a href="module-MongoDBUtilities.html#.saveSniperTransaction">saveSniperTransaction</a></li></ul></li></ul><h3>API-Clients</h3><ul><li><a href="module-GeckoAPI.html">GeckoAPI</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-GeckoAPI.html#.fetchCurrencyPrices">fetchCurrencyPrices</a></li></ul></li><li><a href="module-GoPlusAPI.html">GoPlusAPI</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-GoPlusAPI.html#.getContractInfo">getContractInfo</a></li></ul></li></ul><h3>Utilities</h3><ul><li><a href="module-ApplicationBootstrap.html">ApplicationBootstrap</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-ApplicationBootstrap.html#~startServices">startServices</a></li></ul></li><li><a href="module-UtilityFunctions.html">UtilityFunctions</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-UtilityFunctions.html#.COLORS">COLORS</a></li><li data-type='member' style='display: none;'><a href="module-UtilityFunctions.html#.formatAdditionalInfo">formatAdditionalInfo</a></li><li data-type='member' style='display: none;'><a href="module-UtilityFunctions.html#.isDevelopmentMode">isDevelopmentMode</a></li></ul><ul class='methods'><li data-type='method' style='display: none;'><a href="module-UtilityFunctions.html#.delay">delay</a></li><li data-type='method' style='display: none;'><a href="module-UtilityFunctions.html#.fetchWithTimeout">fetchWithTimeout</a></li><li data-type='method' style='display: none;'><a href="module-UtilityFunctions.html#.logDebug">logDebug</a></li><li data-type='method' style='display: none;'><a href="module-UtilityFunctions.html#.logError">logError</a></li><li data-type='method' style='display: none;'><a href="module-UtilityFunctions.html#.logInfo">logInfo</a></li><li data-type='method' style='display: none;'><a href="module-UtilityFunctions.html#.logWarning">logWarning</a></li><li data-type='method' style='display: none;'><a href="module-UtilityFunctions.html#.playNotificationSound">playNotificationSound</a></li><li data-type='method' style='display: none;'><a href="module-UtilityFunctions.html#.retry">retry</a></li></ul></li><li><a href="module-WorkerManagement.html">WorkerManagement</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-WorkerManagement.html#.initializeHealthMonitoring">initializeHealthMonitoring</a></li><li data-type='method' style='display: none;'><a href="module-WorkerManagement.html#.monitorWorkerHealth">monitorWorkerHealth</a></li><li data-type='method' style='display: none;'><a href="module-WorkerManagement.html#.restartWorker">restartWorker</a></li><li data-type='method' style='display: none;'><a href="module-WorkerManagement.html#.shutdownWorkers">shutdownWorkers</a></li><li data-type='method' style='display: none;'><a href="module-WorkerManagement.html#.startScanners">startScanners</a></li><li data-type='method' style='display: none;'><a href="module-WorkerManagement.html#.startWorker">startWorker</a></li></ul></li></ul><h3>Configurations</h3><ul><li><a href="module-DynamoDBConfig.html">DynamoDBConfig</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-DynamoDBConfig.html#.AWS_CONFIG">AWS_CONFIG</a></li></ul></li><li><a href="module-EthereumConfig.html">EthereumConfig</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-EthereumConfig.html#.ETHEREUM_CONFIG">ETHEREUM_CONFIG</a></li></ul></li><li><a href="module-GeckoConfig.html">GeckoConfig</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-GeckoConfig.html#.GECKO_CONFIG">GECKO_CONFIG</a></li></ul></li><li><a href="module-MongoConfig.html">MongoConfig</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-MongoConfig.html#.MONGO_CONFIG">MONGO_CONFIG</a></li></ul></li><li><a href="module-RedisConfig.html">RedisConfig</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-RedisConfig.html#.REDIS_CONFIG">REDIS_CONFIG</a></li></ul></li><li><a href="module-SolanaConfig.html">SolanaConfig</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-SolanaConfig.html#.SOLANA_CONFIG">SOLANA_CONFIG</a></li></ul></li><li><a href="module-TronConfig.html">TronConfig</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-TronConfig.html#.TRON_CONFIG">TRON_CONFIG</a></li></ul></li><li><a href="module-WorkerConfig.html">WorkerConfig</a><ul class='members'><li data-type='member' style='display: none;'><a href="module-WorkerConfig.html#.WORKER_CONFIG">WORKER_CONFIG</a></li></ul></li></ul><h3>ABI-Contracts</h3><ul><li><a href="module-CustomABIs.html">CustomABIs</a></li><li><a href="module-JsonLoader.html">JsonLoader</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-JsonLoader.html#.loadJson">loadJson</a></li></ul></li><li class="level-hide"><a href="module-JsonLoader.html#.loadJson">loadJson</a></li><li><a href="module-RaydiumABIs.html">RaydiumABIs</a></li><li><a href="module-SunPumpABI.html">SunPumpABI</a></li><li><a href="module-UniswapV2ABIs.html">UniswapV2ABIs</a></li><li><a href="module-UniswapV3ABIs.html">UniswapV3ABIs</a></li></ul><h3>Info</h3><ul><li><a href="module-Documentation.html">Documentation</a></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">UniswapV2ABIs</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+                <div class="description usertext"><p>Exports ABIs for interacting with Uniswap V2 contracts, including routers, pairs, and factories.</p>
+<h3>Included ABIs:</h3>
+<ul>
+<li><strong><code>uniswapV2PairABI</code></strong>: ABI for Uniswap V2 pair contracts (liquidity pools).</li>
+<li><strong><code>uniswapV2RouterABI</code></strong>: ABI for Uniswap V2 router contracts (token swaps and routing).</li>
+<li><strong><code>uniswapV2FactoryABI</code></strong>: ABI for Uniswap V2 factory contracts (pair creation).</li>
+</ul>
+<h3>Key Features:</h3>
+<ul>
+<li><strong>DeFi Operations</strong>: Provides tools for token swaps and liquidity management.</li>
+<li><strong>Ecosystem Growth</strong>: Supports new pair creation and liquidity incentives.</li>
+</ul></div>
+            
+
+            
+                
+
+
+
+
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+    
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="~uniswapV2FactoryABI"><span class="type-signature type-signature-inner, constant">(inner, constant) </span>uniswapV2FactoryABI<span class="type-signature"> :Array.&lt;Object></span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>ABI for interacting with Uniswap V2 factory contracts, enabling the creation and management of liquidity pairs.</p>
+<h3>Constructor:</h3>
+<ul>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>_feeToSetter (address)</code>: Address responsible for setting the fee collection address.</li>
+</ul>
+</li>
+</ul>
+<h3>Events:</h3>
+<ul>
+<li><strong><code>PairCreated</code></strong>:
+<ul>
+<li>Triggered when a new liquidity pair is created.</li>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>token0 (address)</code>: Address of the first token in the pair.</li>
+<li><code>token1 (address)</code>: Address of the second token in the pair.</li>
+<li><code>pair (address)</code>: Address of the created pair contract.</li>
+<li><code>uint256</code>: Index of the created pair.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Functions:</h3>
+<ul>
+<li>
+<p><strong>Pair Management</strong>:</p>
+<ul>
+<li><code>createPair(tokenA, tokenB)</code>:
+<ul>
+<li>Creates a new liquidity pair for the given tokens.</li>
+<li><strong>Outputs</strong>: <code>pair (address)</code>: Address of the newly created pair.</li>
+</ul>
+</li>
+<li><code>getPair(tokenA, tokenB)</code>:
+<ul>
+<li>Returns the address of the pair for the specified tokens if it exists.</li>
+<li><strong>Outputs</strong>: <code>pair (address)</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Viewing All Pairs</strong>:</p>
+<ul>
+<li><code>allPairs(index)</code>:
+<ul>
+<li>Returns the address of the pair at the specified index.</li>
+<li><strong>Outputs</strong>: <code>pair (address)</code>.</li>
+</ul>
+</li>
+<li><code>allPairsLength()</code>:
+<ul>
+<li>Returns the total number of pairs created by the factory.</li>
+<li><strong>Outputs</strong>: <code>length (uint256)</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Fee Management</strong>:</p>
+<ul>
+<li><code>feeTo()</code>:
+<ul>
+<li>Returns the current address where fees are sent.</li>
+<li><strong>Outputs</strong>: <code>feeTo (address)</code>.</li>
+</ul>
+</li>
+<li><code>feeToSetter()</code>:
+<ul>
+<li>Returns the current address responsible for setting the fee collection address.</li>
+<li><strong>Outputs</strong>: <code>feeToSetter (address)</code>.</li>
+</ul>
+</li>
+<li><code>setFeeTo(_feeTo)</code>:
+<ul>
+<li>Sets the address where fees are sent.</li>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>_feeTo (address)</code>: New fee collection address.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>setFeeToSetter(_feeToSetter)</code>:
+<ul>
+<li>Updates the address responsible for setting the fee collection address.</li>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>_feeToSetter (address)</code>: New feeToSetter address.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Key Features:</h3>
+<ul>
+<li><strong>Liquidity Pair Creation</strong>: Facilitates the creation of new token pairs for Uniswap V2.</li>
+<li><strong>Fee Management</strong>: Allows configuration of fee collection and associated administrative roles.</li>
+<li><strong>Pair Retrieval</strong>: Provides methods to query existing pairs by token addresses or index.</li>
+</ul></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <!-- <p>ABI for interacting with Uniswap V2 factory contracts, enabling the creation and management of liquidity pairs.</p>
+<h3>Constructor:</h3>
+<ul>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>_feeToSetter (address)</code>: Address responsible for setting the fee collection address.</li>
+</ul>
+</li>
+</ul>
+<h3>Events:</h3>
+<ul>
+<li><strong><code>PairCreated</code></strong>:
+<ul>
+<li>Triggered when a new liquidity pair is created.</li>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>token0 (address)</code>: Address of the first token in the pair.</li>
+<li><code>token1 (address)</code>: Address of the second token in the pair.</li>
+<li><code>pair (address)</code>: Address of the created pair contract.</li>
+<li><code>uint256</code>: Index of the created pair.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Functions:</h3>
+<ul>
+<li>
+<p><strong>Pair Management</strong>:</p>
+<ul>
+<li><code>createPair(tokenA, tokenB)</code>:
+<ul>
+<li>Creates a new liquidity pair for the given tokens.</li>
+<li><strong>Outputs</strong>: <code>pair (address)</code>: Address of the newly created pair.</li>
+</ul>
+</li>
+<li><code>getPair(tokenA, tokenB)</code>:
+<ul>
+<li>Returns the address of the pair for the specified tokens if it exists.</li>
+<li><strong>Outputs</strong>: <code>pair (address)</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Viewing All Pairs</strong>:</p>
+<ul>
+<li><code>allPairs(index)</code>:
+<ul>
+<li>Returns the address of the pair at the specified index.</li>
+<li><strong>Outputs</strong>: <code>pair (address)</code>.</li>
+</ul>
+</li>
+<li><code>allPairsLength()</code>:
+<ul>
+<li>Returns the total number of pairs created by the factory.</li>
+<li><strong>Outputs</strong>: <code>length (uint256)</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Fee Management</strong>:</p>
+<ul>
+<li><code>feeTo()</code>:
+<ul>
+<li>Returns the current address where fees are sent.</li>
+<li><strong>Outputs</strong>: <code>feeTo (address)</code>.</li>
+</ul>
+</li>
+<li><code>feeToSetter()</code>:
+<ul>
+<li>Returns the current address responsible for setting the fee collection address.</li>
+<li><strong>Outputs</strong>: <code>feeToSetter (address)</code>.</li>
+</ul>
+</li>
+<li><code>setFeeTo(_feeTo)</code>:
+<ul>
+<li>Sets the address where fees are sent.</li>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>_feeTo (address)</code>: New fee collection address.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>setFeeToSetter(_feeToSetter)</code>:
+<ul>
+<li>Updates the address responsible for setting the fee collection address.</li>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>_feeToSetter (address)</code>: New feeToSetter address.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Key Features:</h3>
+<ul>
+<li><strong>Liquidity Pair Creation</strong>: Facilitates the creation of new token pairs for Uniswap V2.</li>
+<li><strong>Fee Management</strong>: Allows configuration of fee collection and associated administrative roles.</li>
+<li><strong>Pair Retrieval</strong>: Provides methods to query existing pairs by token addresses or index.</li>
+</ul> -->
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array.&lt;Object></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~uniswapV2PairABI"><span class="type-signature type-signature-inner, constant">(inner, constant) </span>uniswapV2PairABI<span class="type-signature"> :Array.&lt;Object></span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>ABI for interacting with Uniswap V2 pair contracts, enabling operations on liquidity pools like token swaps, liquidity provision, and synchronization.</p>
+<h3>Events:</h3>
+<ul>
+<li><strong><code>Approval</code></strong>:
+<ul>
+<li>Emitted when an approval is set by the owner to a spender.</li>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>owner (address)</code>: Address of the owner.</li>
+<li><code>spender (address)</code>: Address of the spender.</li>
+<li><code>value (uint256)</code>: Amount approved.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>Burn</code></strong>:
+<ul>
+<li>Emitted when liquidity is burned, and tokens are sent back to the user.</li>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>sender (address)</code>: Address initiating the burn.</li>
+<li><code>amount0 (uint256)</code>: Amount of token0 burned.</li>
+<li><code>amount1 (uint256)</code>: Amount of token1 burned.</li>
+<li><code>to (address)</code>: Address receiving the tokens.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>Mint</code></strong>:
+<ul>
+<li>Emitted when liquidity is added to the pool.</li>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>sender (address)</code>: Address initiating the mint.</li>
+<li><code>amount0 (uint256)</code>: Amount of token0 added.</li>
+<li><code>amount1 (uint256)</code>: Amount of token1 added.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>Swap</code></strong>:
+<ul>
+<li>Emitted during a swap operation.</li>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>sender (address)</code>: Address initiating the swap.</li>
+<li><code>amount0In (uint256)</code>: Amount of token0 input.</li>
+<li><code>amount1In (uint256)</code>: Amount of token1 input.</li>
+<li><code>amount0Out (uint256)</code>: Amount of token0 output.</li>
+<li><code>amount1Out (uint256)</code>: Amount of token1 output.</li>
+<li><code>to (address)</code>: Recipient of the swap.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>Sync</code></strong>:
+<ul>
+<li>Emitted when the reserves of the pair are updated.</li>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>reserve0 (uint112)</code>: Reserve of token0.</li>
+<li><code>reserve1 (uint112)</code>: Reserve of token1.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>Transfer</code></strong>:
+<ul>
+<li>Emitted when tokens are transferred.</li>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>from (address)</code>: Address sending the tokens.</li>
+<li><code>to (address)</code>: Address receiving the tokens.</li>
+<li><code>value (uint256)</code>: Amount of tokens transferred.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Functions:</h3>
+<ul>
+<li><strong>View Functions</strong>:
+<ul>
+<li><code>DOMAIN_SEPARATOR()</code>: Returns the domain separator for EIP-712 compatibility.</li>
+<li><code>MINIMUM_LIQUIDITY()</code>: Returns the minimum liquidity for the pair.</li>
+<li><code>getReserves()</code>: Returns the current reserves of token0 and token1.</li>
+<li><code>token0()</code>: Returns the address of token0.</li>
+<li><code>token1()</code>: Returns the address of token1.</li>
+<li><code>totalSupply()</code>: Returns the total supply of liquidity tokens.</li>
+</ul>
+</li>
+<li><strong>Write Functions</strong>:
+<ul>
+<li><code>mint(address to)</code>: Mints liquidity tokens and sends them to the specified address.</li>
+<li><code>burn(address to)</code>: Burns liquidity tokens and sends the underlying assets to the specified address.</li>
+<li><code>swap(uint256 amount0Out, uint256 amount1Out, address to, bytes data)</code>: Executes a swap operation.</li>
+<li><code>sync()</code>: Synchronizes the reserves of the pair.</li>
+</ul>
+</li>
+<li><strong>Utility Functions</strong>:
+<ul>
+<li><code>initialize(address _token0, address _token1)</code>: Initializes the pair with the specified tokens.</li>
+<li><code>permit(address owner, address spender, uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s)</code>: Allows an address to approve a spender via signature.</li>
+</ul>
+</li>
+</ul>
+<h3>Key Features:</h3>
+<ul>
+<li><strong>Liquidity Management</strong>: Supports minting and burning of liquidity tokens.</li>
+<li><strong>Swaps</strong>: Handles token swaps with detailed inputs and outputs.</li>
+<li><strong>Reserves Synchronization</strong>: Ensures pair reserves are up to date.</li>
+<li><strong>Approval and Transfer</strong>: Implements ERC-20 token standards for approval and transfer.</li>
+</ul></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <!-- <p>ABI for interacting with Uniswap V2 pair contracts, enabling operations on liquidity pools like token swaps, liquidity provision, and synchronization.</p>
+<h3>Events:</h3>
+<ul>
+<li><strong><code>Approval</code></strong>:
+<ul>
+<li>Emitted when an approval is set by the owner to a spender.</li>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>owner (address)</code>: Address of the owner.</li>
+<li><code>spender (address)</code>: Address of the spender.</li>
+<li><code>value (uint256)</code>: Amount approved.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>Burn</code></strong>:
+<ul>
+<li>Emitted when liquidity is burned, and tokens are sent back to the user.</li>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>sender (address)</code>: Address initiating the burn.</li>
+<li><code>amount0 (uint256)</code>: Amount of token0 burned.</li>
+<li><code>amount1 (uint256)</code>: Amount of token1 burned.</li>
+<li><code>to (address)</code>: Address receiving the tokens.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>Mint</code></strong>:
+<ul>
+<li>Emitted when liquidity is added to the pool.</li>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>sender (address)</code>: Address initiating the mint.</li>
+<li><code>amount0 (uint256)</code>: Amount of token0 added.</li>
+<li><code>amount1 (uint256)</code>: Amount of token1 added.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>Swap</code></strong>:
+<ul>
+<li>Emitted during a swap operation.</li>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>sender (address)</code>: Address initiating the swap.</li>
+<li><code>amount0In (uint256)</code>: Amount of token0 input.</li>
+<li><code>amount1In (uint256)</code>: Amount of token1 input.</li>
+<li><code>amount0Out (uint256)</code>: Amount of token0 output.</li>
+<li><code>amount1Out (uint256)</code>: Amount of token1 output.</li>
+<li><code>to (address)</code>: Recipient of the swap.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>Sync</code></strong>:
+<ul>
+<li>Emitted when the reserves of the pair are updated.</li>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>reserve0 (uint112)</code>: Reserve of token0.</li>
+<li><code>reserve1 (uint112)</code>: Reserve of token1.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>Transfer</code></strong>:
+<ul>
+<li>Emitted when tokens are transferred.</li>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>from (address)</code>: Address sending the tokens.</li>
+<li><code>to (address)</code>: Address receiving the tokens.</li>
+<li><code>value (uint256)</code>: Amount of tokens transferred.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Functions:</h3>
+<ul>
+<li><strong>View Functions</strong>:
+<ul>
+<li><code>DOMAIN_SEPARATOR()</code>: Returns the domain separator for EIP-712 compatibility.</li>
+<li><code>MINIMUM_LIQUIDITY()</code>: Returns the minimum liquidity for the pair.</li>
+<li><code>getReserves()</code>: Returns the current reserves of token0 and token1.</li>
+<li><code>token0()</code>: Returns the address of token0.</li>
+<li><code>token1()</code>: Returns the address of token1.</li>
+<li><code>totalSupply()</code>: Returns the total supply of liquidity tokens.</li>
+</ul>
+</li>
+<li><strong>Write Functions</strong>:
+<ul>
+<li><code>mint(address to)</code>: Mints liquidity tokens and sends them to the specified address.</li>
+<li><code>burn(address to)</code>: Burns liquidity tokens and sends the underlying assets to the specified address.</li>
+<li><code>swap(uint256 amount0Out, uint256 amount1Out, address to, bytes data)</code>: Executes a swap operation.</li>
+<li><code>sync()</code>: Synchronizes the reserves of the pair.</li>
+</ul>
+</li>
+<li><strong>Utility Functions</strong>:
+<ul>
+<li><code>initialize(address _token0, address _token1)</code>: Initializes the pair with the specified tokens.</li>
+<li><code>permit(address owner, address spender, uint256 value, uint256 deadline, uint8 v, bytes32 r, bytes32 s)</code>: Allows an address to approve a spender via signature.</li>
+</ul>
+</li>
+</ul>
+<h3>Key Features:</h3>
+<ul>
+<li><strong>Liquidity Management</strong>: Supports minting and burning of liquidity tokens.</li>
+<li><strong>Swaps</strong>: Handles token swaps with detailed inputs and outputs.</li>
+<li><strong>Reserves Synchronization</strong>: Ensures pair reserves are up to date.</li>
+<li><strong>Approval and Transfer</strong>: Implements ERC-20 token standards for approval and transfer.</li>
+</ul> -->
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array.&lt;Object></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="~uniswapV2RouterABI"><span class="type-signature type-signature-inner, constant">(inner, constant) </span>uniswapV2RouterABI<span class="type-signature"> :Array.&lt;Object></span></h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>ABI for interacting with Uniswap V2 router contracts, supporting token swaps, liquidity management, and other DeFi operations.</p>
+<h3>Constructor:</h3>
+<ul>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>_factory (address)</code>: Address of the Uniswap factory.</li>
+<li><code>_WETH (address)</code>: Address of the wrapped Ether (WETH) token.</li>
+</ul>
+</li>
+</ul>
+<h3>Functions:</h3>
+<ul>
+<li>
+<p><strong>Liquidity Management</strong>:</p>
+<ul>
+<li><code>addLiquidity(tokenA, tokenB, amountADesired, amountBDesired, amountAMin, amountBMin, to, deadline)</code>:
+<ul>
+<li>Adds liquidity to a pool.</li>
+<li>Outputs: <code>amountA (uint256)</code>, <code>amountB (uint256)</code>, <code>liquidity (uint256)</code>.</li>
+</ul>
+</li>
+<li><code>addLiquidityETH(token, amountTokenDesired, amountTokenMin, amountETHMin, to, deadline)</code>:
+<ul>
+<li>Adds liquidity to a pool involving ETH.</li>
+<li>Outputs: <code>amountToken (uint256)</code>, <code>amountETH (uint256)</code>, <code>liquidity (uint256)</code>.</li>
+</ul>
+</li>
+<li><code>removeLiquidity(tokenA, tokenB, liquidity, amountAMin, amountBMin, to, deadline)</code>:
+<ul>
+<li>Removes liquidity from a pool.</li>
+<li>Outputs: <code>amountA (uint256)</code>, <code>amountB (uint256)</code>.</li>
+</ul>
+</li>
+<li><code>removeLiquidityETH(token, liquidity, amountTokenMin, amountETHMin, to, deadline)</code>:
+<ul>
+<li>Removes liquidity involving ETH.</li>
+<li>Outputs: <code>amountToken (uint256)</code>, <code>amountETH (uint256)</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Token Swaps</strong>:</p>
+<ul>
+<li><code>swapExactTokensForTokens(amountIn, amountOutMin, path, to, deadline)</code>:
+<ul>
+<li>Swaps an exact amount of input tokens for output tokens.</li>
+<li>Outputs: <code>amounts (uint256[])</code>.</li>
+</ul>
+</li>
+<li><code>swapTokensForExactTokens(amountOut, amountInMax, path, to, deadline)</code>:
+<ul>
+<li>Swaps tokens to receive an exact amount of output tokens.</li>
+<li>Outputs: <code>amounts (uint256[])</code>.</li>
+</ul>
+</li>
+<li><code>swapExactETHForTokens(amountOutMin, path, to, deadline)</code>:
+<ul>
+<li>Swaps ETH for an exact amount of tokens.</li>
+<li>Outputs: <code>amounts (uint256[])</code>.</li>
+</ul>
+</li>
+<li><code>swapExactTokensForETH(amountIn, amountOutMin, path, to, deadline)</code>:
+<ul>
+<li>Swaps tokens for an exact amount of ETH.</li>
+<li>Outputs: <code>amounts (uint256[])</code>.</li>
+</ul>
+</li>
+<li><code>swapTokensForExactETH(amountOut, amountInMax, path, to, deadline)</code>:
+<ul>
+<li>Swaps tokens to receive an exact amount of ETH.</li>
+<li>Outputs: <code>amounts (uint256[])</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>View Functions</strong>:</p>
+<ul>
+<li><code>WETH()</code>: Returns the WETH address.</li>
+<li><code>factory()</code>: Returns the address of the Uniswap factory.</li>
+<li><code>getAmountsIn(amountOut, path)</code>: Calculates the input token amounts required for a desired output.
+<ul>
+<li>Outputs: <code>amounts (uint256[])</code>.</li>
+</ul>
+</li>
+<li><code>getAmountsOut(amountIn, path)</code>: Calculates the output token amounts for a given input.
+<ul>
+<li>Outputs: <code>amounts (uint256[])</code>.</li>
+</ul>
+</li>
+<li><code>quote(amountA, reserveA, reserveB)</code>: Returns a quote for a token amount based on reserves.
+<ul>
+<li>Outputs: <code>amountB (uint256)</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Other Operations</strong>:</p>
+<ul>
+<li><code>receive()</code>: Fallback function to accept ETH transfers.</li>
+<li><code>getAmountIn(amountOut, reserveIn, reserveOut)</code>:
+<ul>
+<li>Calculates the amount of input tokens required for a given output.</li>
+<li>Outputs: <code>amountIn (uint256)</code>.</li>
+</ul>
+</li>
+<li><code>getAmountOut(amountIn, reserveIn, reserveOut)</code>:
+<ul>
+<li>Calculates the amount of output tokens for a given input.</li>
+<li>Outputs: <code>amountOut (uint256)</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Key Features:</h3>
+<ul>
+<li><strong>Liquidity Provision and Removal</strong>: Handles adding and removing liquidity with and without ETH.</li>
+<li><strong>Flexible Token Swaps</strong>: Supports swaps with slippage protection and fee-on-transfer tokens.</li>
+<li><strong>Price Calculation</strong>: Provides functions for quoting prices and calculating token amounts.</li>
+</ul></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <!-- <p>ABI for interacting with Uniswap V2 router contracts, supporting token swaps, liquidity management, and other DeFi operations.</p>
+<h3>Constructor:</h3>
+<ul>
+<li><strong>Inputs</strong>:
+<ul>
+<li><code>_factory (address)</code>: Address of the Uniswap factory.</li>
+<li><code>_WETH (address)</code>: Address of the wrapped Ether (WETH) token.</li>
+</ul>
+</li>
+</ul>
+<h3>Functions:</h3>
+<ul>
+<li>
+<p><strong>Liquidity Management</strong>:</p>
+<ul>
+<li><code>addLiquidity(tokenA, tokenB, amountADesired, amountBDesired, amountAMin, amountBMin, to, deadline)</code>:
+<ul>
+<li>Adds liquidity to a pool.</li>
+<li>Outputs: <code>amountA (uint256)</code>, <code>amountB (uint256)</code>, <code>liquidity (uint256)</code>.</li>
+</ul>
+</li>
+<li><code>addLiquidityETH(token, amountTokenDesired, amountTokenMin, amountETHMin, to, deadline)</code>:
+<ul>
+<li>Adds liquidity to a pool involving ETH.</li>
+<li>Outputs: <code>amountToken (uint256)</code>, <code>amountETH (uint256)</code>, <code>liquidity (uint256)</code>.</li>
+</ul>
+</li>
+<li><code>removeLiquidity(tokenA, tokenB, liquidity, amountAMin, amountBMin, to, deadline)</code>:
+<ul>
+<li>Removes liquidity from a pool.</li>
+<li>Outputs: <code>amountA (uint256)</code>, <code>amountB (uint256)</code>.</li>
+</ul>
+</li>
+<li><code>removeLiquidityETH(token, liquidity, amountTokenMin, amountETHMin, to, deadline)</code>:
+<ul>
+<li>Removes liquidity involving ETH.</li>
+<li>Outputs: <code>amountToken (uint256)</code>, <code>amountETH (uint256)</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Token Swaps</strong>:</p>
+<ul>
+<li><code>swapExactTokensForTokens(amountIn, amountOutMin, path, to, deadline)</code>:
+<ul>
+<li>Swaps an exact amount of input tokens for output tokens.</li>
+<li>Outputs: <code>amounts (uint256[])</code>.</li>
+</ul>
+</li>
+<li><code>swapTokensForExactTokens(amountOut, amountInMax, path, to, deadline)</code>:
+<ul>
+<li>Swaps tokens to receive an exact amount of output tokens.</li>
+<li>Outputs: <code>amounts (uint256[])</code>.</li>
+</ul>
+</li>
+<li><code>swapExactETHForTokens(amountOutMin, path, to, deadline)</code>:
+<ul>
+<li>Swaps ETH for an exact amount of tokens.</li>
+<li>Outputs: <code>amounts (uint256[])</code>.</li>
+</ul>
+</li>
+<li><code>swapExactTokensForETH(amountIn, amountOutMin, path, to, deadline)</code>:
+<ul>
+<li>Swaps tokens for an exact amount of ETH.</li>
+<li>Outputs: <code>amounts (uint256[])</code>.</li>
+</ul>
+</li>
+<li><code>swapTokensForExactETH(amountOut, amountInMax, path, to, deadline)</code>:
+<ul>
+<li>Swaps tokens to receive an exact amount of ETH.</li>
+<li>Outputs: <code>amounts (uint256[])</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>View Functions</strong>:</p>
+<ul>
+<li><code>WETH()</code>: Returns the WETH address.</li>
+<li><code>factory()</code>: Returns the address of the Uniswap factory.</li>
+<li><code>getAmountsIn(amountOut, path)</code>: Calculates the input token amounts required for a desired output.
+<ul>
+<li>Outputs: <code>amounts (uint256[])</code>.</li>
+</ul>
+</li>
+<li><code>getAmountsOut(amountIn, path)</code>: Calculates the output token amounts for a given input.
+<ul>
+<li>Outputs: <code>amounts (uint256[])</code>.</li>
+</ul>
+</li>
+<li><code>quote(amountA, reserveA, reserveB)</code>: Returns a quote for a token amount based on reserves.
+<ul>
+<li>Outputs: <code>amountB (uint256)</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Other Operations</strong>:</p>
+<ul>
+<li><code>receive()</code>: Fallback function to accept ETH transfers.</li>
+<li><code>getAmountIn(amountOut, reserveIn, reserveOut)</code>:
+<ul>
+<li>Calculates the amount of input tokens required for a given output.</li>
+<li>Outputs: <code>amountIn (uint256)</code>.</li>
+</ul>
+</li>
+<li><code>getAmountOut(amountIn, reserveIn, reserveOut)</code>:
+<ul>
+<li>Calculates the amount of output tokens for a given input.</li>
+<li>Outputs: <code>amountOut (uint256)</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Key Features:</h3>
+<ul>
+<li><strong>Liquidity Provision and Removal</strong>: Handles adding and removing liquidity with and without ETH.</li>
+<li><strong>Flexible Token Swaps</strong>: Supports swaps with slippage protection and fee-on-transfer tokens.</li>
+<li><strong>Price Calculation</strong>: Provides functions for quoting prices and calculating token amounts.</li>
+</ul> -->
+</div>
+
+
+
+    <h5 class="h5-types">Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array.&lt;Object></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a> on Wed Jan 01 2025 23:34:54 GMT-0500 (Eastern Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>
