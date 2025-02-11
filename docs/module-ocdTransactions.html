@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>ocdTransactions - On-Chain Dynamics</title>
+    
+    <meta name="description" content="On-Chain Dynamics Dynamo DB Documentation" />
+    
+    
+    
+    <meta property="og:title" content="On-Chain Dynamics"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="tabicon.png"/>
+    <meta property="og:site_name" content="On-Chain Dynamics Dynamo DB"/>
+    <meta property="og:url" content=""/>
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav class="wrap">
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    
+    <h2><a href="index.html">Home</a></h2><h2><a href="https://www.onchaindynamics.io" target="_blank" class="menu-item" id="website_link" >Website</a></h2><h2><a href="https://forum.onchaindynamics.io" target="_blank" class="menu-item" id="forum_link" >Forum</a></h2><h3>Tables</h3><ul><li><a href="module-ocdBetaUsers.html">ocdBetaUsers</a></li><li><a href="module-ocdReferrals.html">ocdReferrals</a></li><li><a href="module-ocdTotalStats.html">ocdTotalStats</a></li><li><a href="module-ocdTransactions.html">ocdTransactions</a></li><li><a href="module-ocdUserStats.html">ocdUserStats</a></li><li><a href="module-ocdUsers.html">ocdUsers</a></li><li><a href="module-ocdWaitlist.html">ocdWaitlist</a></li><li><a href="module-ocdWallets.html">ocdWallets</a></li><li><a href="module-ocdWatchlist.html">ocdWatchlist</a></li><li><a href="module-ocdWhitelist.html">ocdWhitelist</a></li></ul><h3>Indexes</h3><ul><li><a href="module-CombinedRankingIndex.html">CombinedRankingIndex</a></li><li><a href="module-ReferralCodeIndex.html">ReferralCodeIndex</a></li><li><a href="module-SniperTransactionIndex.html">SniperTransactionIndex</a></li></ul><h3>Handlers</h3><ul><li><a href="module-DynamoDBStreamHandler.html">DynamoDBStreamHandler</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-DynamoDBStreamHandler.html#.calculateTransactionPoints">calculateTransactionPoints</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBStreamHandler.html#.extractTradeDetails">extractTradeDetails</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBStreamHandler.html#.lambdaHandler">lambdaHandler</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBStreamHandler.html#.processRecord">processRecord</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBStreamHandler.html#.updateReferralStats">updateReferralStats</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBStreamHandler.html#.updateTotalStats">updateTotalStats</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBStreamHandler.html#.updateUserStats">updateUserStats</a></li></ul></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">ocdTransactions</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+                <div class="description usertext"><p>Tracks transactions made on the OCD platform, including user trade details, blockchain interactions, and associated metadata.</p>
+<p>This module represents the <code>ocdTransactions</code> table schema and provides detailed information on transaction tracking and its use cases.</p>
+<h3>Table Schema:</h3>
+<ul>
+<li><strong>Primary Key</strong>: <code>txhash</code>: Transaction hash of the trade.</li>
+<li><strong>Attributes</strong>:
+<ul>
+<li><code>userid</code>: Unique identifier for the user, wallet address.</li>
+<li><code>chain</code>: Blockchain network where the trade occurred.</li>
+<li><code>pair</code>: Trading pair address involved in the transaction.</li>
+<li><code>token</code>: Token address traded by the user.</li>
+<li><code>volume</code>: Total tokens involved in the trade.</li>
+<li><code>value</code>: Total value in ETH of the trade.</li>
+<li><code>valueusd</code>: Total value in USD of the trade.</li>
+<li><code>tokenamt</code>: Amount of tokens in the trade.</li>
+<li><code>tradetype</code>: Type of trade (buy or sell).</li>
+<li><code>status</code>: Current status of the trade: pending, confirmed, or error.</li>
+<li><code>referredby</code>: Referral code the user signed up with, if applicable.</li>
+<li><code>tokendetails</code>: Additional details of the traded token.</li>
+<li><code>txdetails</code>: Additional details of the transaction.</li>
+<li><code>timestamp</code>: Timestamp indicating when the trade occurred.</li>
+<li><code>wallet</code>: Wallet address used for the transaction.</li>
+<li><code>walletname</code>: Name assigned to the wallet.</li>
+<li><code>txtype</code>: Transaction type (platform or sniper).</li>
+</ul>
+</li>
+</ul>
+<h3>Key Features:</h3>
+<ul>
+<li><strong>Comprehensive Tracking</strong>: Captures all trade-related details, including token and blockchain metadata.</li>
+<li><strong>Referral Integration</strong>: Links transactions with referral codes for tracking referral performance.</li>
+<li><strong>Multi-Chain Support</strong>: Supports trades across multiple blockchains such as Ethereum and Solana.</li>
+<li><strong>Real-Time Synchronization</strong>: Updates statistics and metrics dynamically using DynamoDB Streams.</li>
+<li><strong>Error Handling</strong>: Captures transaction statuses for debugging and user notifications.</li>
+</ul>
+<h3>Use Cases:</h3>
+<ul>
+<li>Tracking individual user trades on the platform.</li>
+<li>Integrating trade data with referral programs for analytics and rewards.</li>
+<li>Monitoring transaction statuses for error handling and resolution.</li>
+<li>Aggregating trade data for user and global statistics.</li>
+</ul>
+<h3>Supported Data Types:</h3>
+<ul>
+<li><strong>Trade Metadata</strong>: Includes trading pair, token details, and transaction-specific attributes.</li>
+<li><strong>User Identifiers</strong>: User wallet addresses and associated referral codes.</li>
+<li><strong>Value Metrics</strong>: Trade volume, ETH value, and USD value.</li>
+</ul>
+<p>This module ensures reliable tracking and management of user trades on the OCD platform, supporting real-time updates and integration with other platform features.</p></div>
+            
+
+            
+                
+
+
+
+
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+    
+    
+
+     
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Table Definitions</h3>
+
+        
+                
+<h4 class="name" id=".ocdTransactions">ocdTransactions</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>The ocdTransactions table stores a list of transactions made using the platform's dApp.
+Transactions are updated via API calls, which also trigger a stream event to the Lambda function.</p></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Schema:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>txhash</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Transaction hash of trade made by the user (Primary Key).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>userid</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Unique identifier for the user, wallet address.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>chain</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Chain of the trade made by the user.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>pair</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Pair address traded by the user.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>token</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Token address traded by the user.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>volume</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Total tokens of the trade.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Total value in ETH of the trade.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>valueusd</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Total value in USD of the trade.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tokenamt</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Amount of tokens in the trade.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tradetype</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Trade type, either buy or sell.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>status</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Status of the trade (pending, confirmed, error).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>referredby</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Referral code the user signed up with, if applicable.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tokendetails</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Details of the token used in the trade.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>txdetails</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Details of the transaction.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>timestamp</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Timestamp of the trade made by the user.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>wallet</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Wallet address used in the trade.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>walletname</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Name of the wallet.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>txtype</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Transaction type (e.g., platform, sniper).</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <!-- <p>The ocdTransactions table stores a list of transactions made using the platform's dApp.
+Transactions are updated via API calls, which also trigger a stream event to the Lambda function.</p> -->
+</div>
+
+
+
+
+
+
+
+
+            
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a> on Fri Jan 17 2025 13:31:38 GMT-0500 (Eastern Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>

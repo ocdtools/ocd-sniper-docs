@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>SniperTransactionIndex - On-Chain Dynamics</title>
+    
+    <meta name="description" content="On-Chain Dynamics Dynamo DB Documentation" />
+    
+    
+    
+    <meta property="og:title" content="On-Chain Dynamics"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="tabicon.png"/>
+    <meta property="og:site_name" content="On-Chain Dynamics Dynamo DB"/>
+    <meta property="og:url" content=""/>
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav class="wrap">
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    
+    <h2><a href="index.html">Home</a></h2><h2><a href="https://www.onchaindynamics.io" target="_blank" class="menu-item" id="website_link" >Website</a></h2><h2><a href="https://forum.onchaindynamics.io" target="_blank" class="menu-item" id="forum_link" >Forum</a></h2><h3>Tables</h3><ul><li><a href="module-ocdBetaUsers.html">ocdBetaUsers</a></li><li><a href="module-ocdReferrals.html">ocdReferrals</a></li><li><a href="module-ocdTotalStats.html">ocdTotalStats</a></li><li><a href="module-ocdTransactions.html">ocdTransactions</a></li><li><a href="module-ocdUserStats.html">ocdUserStats</a></li><li><a href="module-ocdUsers.html">ocdUsers</a></li><li><a href="module-ocdWaitlist.html">ocdWaitlist</a></li><li><a href="module-ocdWallets.html">ocdWallets</a></li><li><a href="module-ocdWatchlist.html">ocdWatchlist</a></li><li><a href="module-ocdWhitelist.html">ocdWhitelist</a></li></ul><h3>Indexes</h3><ul><li><a href="module-CombinedRankingIndex.html">CombinedRankingIndex</a></li><li><a href="module-ReferralCodeIndex.html">ReferralCodeIndex</a></li><li><a href="module-SniperTransactionIndex.html">SniperTransactionIndex</a></li></ul><h3>Handlers</h3><ul><li><a href="module-DynamoDBStreamHandler.html">DynamoDBStreamHandler</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-DynamoDBStreamHandler.html#.calculateTransactionPoints">calculateTransactionPoints</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBStreamHandler.html#.extractTradeDetails">extractTradeDetails</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBStreamHandler.html#.lambdaHandler">lambdaHandler</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBStreamHandler.html#.processRecord">processRecord</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBStreamHandler.html#.updateReferralStats">updateReferralStats</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBStreamHandler.html#.updateTotalStats">updateTotalStats</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBStreamHandler.html#.updateUserStats">updateUserStats</a></li></ul></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">SniperTransactionIndex</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+                <div class="description usertext"><p>Global Secondary Index (GSI) for the <code>ocdTransactions</code> table. This index enables efficient querying of transactions based on user ID and transaction type.</p>
+<h3>Index Schema:</h3>
+<ul>
+<li><strong>Partition Key</strong>: <code>userid</code> (User ID used to group transactions).</li>
+<li><strong>Sort Key</strong>: <code>txtype</code> (Transaction type for sorting, e.g., &quot;sniper&quot;, &quot;platform&quot;).</li>
+<li><strong>Projection Type</strong>: ALL (Includes all attributes in the projection).</li>
+</ul>
+<h3>Key Features:</h3>
+<ul>
+<li><strong>User Grouping</strong>: Allows transactions to be grouped and queried by user ID.</li>
+<li><strong>Transaction Sorting</strong>: Enables sorting and filtering by transaction type.</li>
+<li><strong>Comprehensive Projection</strong>: Includes all attributes for flexible querying.</li>
+</ul>
+<h3>Use Cases:</h3>
+<ul>
+<li>Retrieving all transactions for a specific user.</li>
+<li>Filtering transactions by type, such as sniper or platform trades.</li>
+<li>Analyzing user-specific transaction patterns.</li>
+</ul></div>
+            
+
+            
+                
+
+
+
+
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+    
+    
+
+     
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Table Definitions</h3>
+
+        
+                
+<h4 class="name" id=".SniperTransactionIndex">SniperTransactionIndex</h4>
+
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Global Secondary Index for ocdTransactions.</p></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Schema:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>userid</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>User ID to group transactions for indexing.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>txtype</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Transaction type for sorting transactions in the index.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>projectionType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The projection type (ALL).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>description</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Includes all attributes in the index projection.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<div class="description usertext">
+    <!-- <p>Global Secondary Index for ocdTransactions.</p> -->
+</div>
+
+
+
+
+
+
+
+
+            
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a> on Fri Jan 17 2025 13:31:38 GMT-0500 (Eastern Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>

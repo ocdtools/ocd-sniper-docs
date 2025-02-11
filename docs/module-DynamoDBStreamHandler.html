@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>DynamoDBStreamHandler - On-Chain Dynamics</title>
+    
+    <meta name="description" content="On-Chain Dynamics Dynamo DB Documentation" />
+    
+    
+    
+    <meta property="og:title" content="On-Chain Dynamics"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="tabicon.png"/>
+    <meta property="og:site_name" content="On-Chain Dynamics Dynamo DB"/>
+    <meta property="og:url" content=""/>
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav class="wrap">
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    
+    <h2><a href="index.html">Home</a></h2><h2><a href="https://www.onchaindynamics.io" target="_blank" class="menu-item" id="website_link" >Website</a></h2><h2><a href="https://forum.onchaindynamics.io" target="_blank" class="menu-item" id="forum_link" >Forum</a></h2><h3>Tables</h3><ul><li><a href="module-ocdBetaUsers.html">ocdBetaUsers</a></li><li><a href="module-ocdReferrals.html">ocdReferrals</a></li><li><a href="module-ocdTotalStats.html">ocdTotalStats</a></li><li><a href="module-ocdTransactions.html">ocdTransactions</a></li><li><a href="module-ocdUserStats.html">ocdUserStats</a></li><li><a href="module-ocdUsers.html">ocdUsers</a></li><li><a href="module-ocdWaitlist.html">ocdWaitlist</a></li><li><a href="module-ocdWallets.html">ocdWallets</a></li><li><a href="module-ocdWatchlist.html">ocdWatchlist</a></li><li><a href="module-ocdWhitelist.html">ocdWhitelist</a></li></ul><h3>Indexes</h3><ul><li><a href="module-CombinedRankingIndex.html">CombinedRankingIndex</a></li><li><a href="module-ReferralCodeIndex.html">ReferralCodeIndex</a></li><li><a href="module-SniperTransactionIndex.html">SniperTransactionIndex</a></li></ul><h3>Handlers</h3><ul><li><a href="module-DynamoDBStreamHandler.html">DynamoDBStreamHandler</a><ul class='methods'><li data-type='method' style='display: none;'><a href="module-DynamoDBStreamHandler.html#.calculateTransactionPoints">calculateTransactionPoints</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBStreamHandler.html#.extractTradeDetails">extractTradeDetails</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBStreamHandler.html#.lambdaHandler">lambdaHandler</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBStreamHandler.html#.processRecord">processRecord</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBStreamHandler.html#.updateReferralStats">updateReferralStats</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBStreamHandler.html#.updateTotalStats">updateTotalStats</a></li><li data-type='method' style='display: none;'><a href="module-DynamoDBStreamHandler.html#.updateUserStats">updateUserStats</a></li></ul></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">DynamoDBStreamHandler</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+                <div class="description usertext"><p>Processes DynamoDB Stream events in real-time to handle transactions and dynamically update user stats, total stats, and referral stats.
+Designed for seamless integration with AWS DynamoDB, it ensures accurate updates and resilience for high-throughput event handling.</p>
+<h3>Key Features:</h3>
+<ul>
+<li><strong>Stream Processing</strong>: Handles <code>INSERT</code>, <code>MODIFY</code>, and <code>REMOVE</code> events from DynamoDB Streams.</li>
+<li><strong>Real-Time Updates</strong>: Dynamically updates <code>ocdUserStats</code>, <code>ocdTotalStats</code>, and <code>ocdReferrals</code> tables.</li>
+<li><strong>Scalability</strong>: Designed for high-throughput DynamoDB Stream processing with minimal latency.</li>
+</ul>
+<h3>Functions:</h3>
+<ul>
+<li><strong><code>lambdaHandler</code></strong>: The entry point for AWS Lambda. Processes all records in a DynamoDB Stream event and delegates them to <code>processRecord</code> for detailed handling.</li>
+<li><strong><code>processRecord</code></strong>: Processes a single DynamoDB Stream record, identifies the event type, and updates the relevant statistics tables.</li>
+</ul>
+<h3>Utility Functions:</h3>
+<ul>
+<li><strong><code>extractTradeDetails</code></strong>: Extracts and formats trade details from a DynamoDB image, including user ID, transaction volume, and referral information.</li>
+<li><strong><code>calculateTransactionPoints</code></strong>: Computes user and referral points based on transaction volumes in USD.</li>
+<li><strong><code>updateUserStats</code></strong>: Updates user-specific statistics in the <code>ocdUserStats</code> table, including trade volume, value, points, and rankings.</li>
+<li><strong><code>updateTotalStats</code></strong>: Updates global trade statistics in the <code>ocdTotalStats</code> table for all users.</li>
+<li><strong><code>updateReferralStats</code></strong>: Updates referral statistics in the <code>ocdReferrals</code> table based on referral activity.</li>
+<li><strong><code>getReferralVolumeUSD</code></strong>: Retrieves the total referral volume in USD for a given referral code from the <code>ocdReferrals</code> table.</li>
+</ul>
+<h3>Use Cases:</h3>
+<ul>
+<li>Real-time synchronization of trade data with user and platform statistics.</li>
+<li>Providing accurate and up-to-date analytics for user engagement, referrals, and trade activity.</li>
+<li>Seamless integration with AWS DynamoDB Streams for event-driven updates.</li>
+<li>Supporting analytics dashboards and data-driven decision-making with precise metrics.</li>
+</ul>
+<p>This module ensures the seamless processing of DynamoDB Stream events and accurate real-time updates to all relevant statistics tables, enabling a reliable and scalable infrastructure for trade data management.</p></div>
+            
+
+            
+                
+
+
+
+
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+    
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".calculateTransactionPoints"><span class="type-signature type-signature-static">(static) </span>calculateTransactionPoints<span class="signature">(volumeUsd)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Calculates user and referral points based on transaction volume in USD.</p></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>volumeUsd</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Decimal</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The transaction volume in USD.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>User and referral points.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".extractTradeDetails"><span class="type-signature type-signature-static">(static) </span>extractTradeDetails<span class="signature">(image)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Extracts and returns trade details from a DynamoDB image.</p></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>image</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The DynamoDB image containing trade details.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Trade details object.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".lambdaHandler"><span class="type-signature type-signature-async, static">(async, static) </span>lambdaHandler<span class="signature">(event)</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>AWS Lambda handler for processing OCD transactions.</p></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>event</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The AWS Lambda event object containing DynamoDB Stream records.</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>Records</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Object></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Array of DynamoDB Stream records.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves after all records are processed.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;void></span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".processRecord"><span class="type-signature type-signature-async, static">(async, static) </span>processRecord<span class="signature">(record)</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Processes a single DynamoDB stream record and updates the corresponding statistics.</p></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>record</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A DynamoDB Stream record.</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>eventName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The type of event (e.g., 'INSERT', 'MODIFY', 'REMOVE').</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dynamodb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Contains the old and new images of the record.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves after processing the record.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;void></span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".updateReferralStats"><span class="type-signature type-signature-async, static">(async, static) </span>updateReferralStats<span class="signature">(tradeDetails, eventName)</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Updates referral statistics for a given referral code.</p></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>tradeDetails</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Details of the trade.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>eventName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The type of event ('INSERT', 'MODIFY', 'REMOVE').</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves after updating referral statistics.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;void></span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".updateTotalStats"><span class="type-signature type-signature-async, static">(async, static) </span>updateTotalStats<span class="signature">(tradeDetails, eventName)</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Updates total statistics for all users in the DynamoDB table.</p></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>tradeDetails</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Details of the trade.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>eventName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The type of event ('INSERT', 'MODIFY', 'REMOVE').</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves after updating total statistics.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;void></span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".updateUserStats"><span class="type-signature type-signature-async, static">(async, static) </span>updateUserStats<span class="signature">(userId, tradeDetails, eventName)</span><span class="type-signature"> &rarr; {Promise.&lt;void>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Updates user statistics in the DynamoDB table.</p></li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>userId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The user ID whose stats are being updated.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tradeDetails</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Details of the trade.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>eventName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The type of event ('INSERT', 'MODIFY', 'REMOVE').</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Resolves after updating user statistics.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;void></span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a> on Fri Jan 17 2025 13:31:38 GMT-0500 (Eastern Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+<script src="scripts/collapse.js" defer></script>
+
+
+</body>
+</html>
